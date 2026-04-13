@@ -3,9 +3,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Show, UserButton, SignInButton, SignUpButton } from "@clerk/nextjs";
 
 const navLinks = [
   { href: "/", label: "Dashboard" },
+  { href: "/discover", label: "Discover" },
   { href: "/add", label: "Add Word" },
   { href: "/vocab", label: "Vocabulary" },
   { href: "/review", label: "Review" },
@@ -51,6 +53,23 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
+            <div className="ml-3 pl-3 border-l border-border flex items-center gap-2">
+              <Show when="signed-out">
+                <SignInButton>
+                  <button className="px-3 py-1.5 rounded-lg text-sm font-medium text-muted hover:text-foreground hover:bg-stone-100 transition-all duration-200">
+                    Sign In
+                  </button>
+                </SignInButton>
+                <SignUpButton>
+                  <button className="px-3 py-1.5 rounded-lg text-sm font-medium text-white bg-primary hover:bg-green-700 transition-all duration-200">
+                    Sign Up
+                  </button>
+                </SignUpButton>
+              </Show>
+              <Show when="signed-in">
+                <UserButton />
+              </Show>
+            </div>
           </div>
         </div>
       </div>
