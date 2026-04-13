@@ -17,6 +17,7 @@ const CATEGORIES = [
 
 interface TranslateResult {
   query: string;
+  direction: "en-zh" | "zh-en";
   translation: string;
   alternatives: string[];
 }
@@ -24,6 +25,11 @@ interface TranslateResult {
 interface ExampleSentence {
   chinese: string;
   english: string;
+}
+
+// Detect if a string contains Chinese (CJK) characters
+function containsChinese(text: string): boolean {
+  return /[\u4e00-\u9fff]/.test(text);
 }
 
 export default function DiscoverPage() {
@@ -37,8 +43,9 @@ export default function DiscoverPage() {
   const [examples, setExamples] = useState<ExampleSentence[]>([]);
   const [examplesLoading, setExamplesLoading] = useState(false);
 
-  // Save form state
-  const [selectedChinese, setSelectedChinese] = useState("");
+  // Save form state — stored in canonical "chinese + english" form regardless of search direction
+  const [chineseValue, setChineseValue] = useState("");
+  const [englishValue, setEnglishValue] = useState("");
   const [pinyinValue, setPinyinValue] = useState("");
   const [example, setExample] = useState("");
   const [category, setCategory] = useState("other");
@@ -47,17 +54,17 @@ export default function DiscoverPage() {
 
   // Auto-generate pinyin whenever Chinese characters change
   useEffect(() => {
-    if (selectedChinese.trim()) {
-      const generated = pinyin(selectedChinese, { toneType: "symbol" });
+    if (chineseValue.trim()) {
+      const generated = pinyin(chineseValue, { toneType: "symbol" });
       setPinyinValue(generated);
     } else {
       setPinyinValue("");
     }
-  }, [selectedChinese]);
+  }, [chineseValue]);
 
-  // Fetch example sentences when selectedChinese changes
+  // Fetch example sentences when chineseValue changes
   useEffect(() => {
-    if (!selectedChinese.trim()) {
+    if (!chineseValue.trim()) {
       setExamples([]);
       return;
     }
@@ -66,13 +73,13 @@ export default function DiscoverPage() {
       setExamplesLoading(true);
       try {
         const res = await fetch(
-          `/api/examples?q=${encodeURIComponent(selectedChinese.trim())}`
+          `/api/examples?q=${encodeURIComponent(chineseValue.trim())}`
         );
         if (!res.ok) return;
         const data = await res.json();
         if (!cancelled) setExamples(data.sentences ?? []);
       } catch {
-        // silent fail — examples are a nice-to-have
+        // silent fail
       } finally {
         if (!cancelled) setExamplesLoading(false);
       }
@@ -82,7 +89,7 @@ export default function DiscoverPage() {
       cancelled = true;
       clearTimeout(t);
     };
-  }, [selectedChinese]);
+  }, [chineseValue]);
 
   async function handleSearch(e: React.FormEvent) {
     e.preventDefault();
@@ -91,9 +98,15 @@ export default function DiscoverPage() {
     setError(null);
     setResult(null);
     setSaved(false);
+
+    const trimmed = query.trim();
+    const direction: "zh-en" | "en-zh" = containsChinese(trimmed)
+      ? "zh-en"
+      : "en-zh";
+
     try {
       const res = await fetch(
-        `/api/translate?q=${encodeURIComponent(query.trim())}&dir=en-zh`
+        `/api/translate?q=${encodeURIComponent(trimmed)}&dir=${direction}`
       );
       if (!res.ok) {
         const body = await res.json().catch(() => ({}));
@@ -101,7 +114,17 @@ export default function DiscoverPage() {
       }
       const data: TranslateResult = await res.json();
       setResult(data);
-      setSelectedChinese(data.translation);
+
+      // Populate save form based on which direction we translated
+      if (direction === "en-zh") {
+        // English → Chinese
+        setEnglishValue(data.query);
+        setChineseValue(data.translation);
+      } else {
+        // Chinese → English
+        setChineseValue(data.query);
+        setEnglishValue(data.translation);
+      }
     } catch (err) {
       setError(err instanceof Error ? err.message : "Something went wrong");
     } finally {
@@ -110,12 +133,18 @@ export default function DiscoverPage() {
   }
 
   async function handleSave() {
-    if (!selectedChinese.trim() || !pinyinValue.trim() || !result) return;
+    if (
+      !chineseValue.trim() ||
+      !englishValue.trim() ||
+      !pinyinValue.trim() ||
+      !result
+    )
+      return;
     setSaving(true);
     await addEntry({
-      chinese: selectedChinese.trim(),
+      chinese: chineseValue.trim(),
       pinyin: pinyinValue.trim(),
-      english: result.query,
+      english: englishValue.trim(),
       example: example.trim() || undefined,
       category,
     });
@@ -124,7 +153,8 @@ export default function DiscoverPage() {
     setTimeout(() => {
       setQuery("");
       setResult(null);
-      setSelectedChinese("");
+      setChineseValue("");
+      setEnglishValue("");
       setPinyinValue("");
       setExample("");
       setCategory("other");
@@ -140,8 +170,8 @@ export default function DiscoverPage() {
           Discover Words
         </h1>
         <p className="text-muted text-lg">
-          Type an English word to get the Chinese translation, auto-generated
-          pinyin, and example sentences from native speakers.
+          Type an English or Chinese word. Get the translation, pinyin with
+          tones, and real example sentences.
         </p>
       </div>
 
@@ -150,7 +180,7 @@ export default function DiscoverPage() {
           type="text"
           value={query}
           onChange={(e) => setQuery(e.target.value)}
-          placeholder="e.g. hello, airplane, happiness"
+          placeholder="e.g. hello, 歌手, happiness, 茶"
           className="flex-1 px-4 py-3 rounded-xl border border-border bg-background text-lg placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
         />
         <button
@@ -171,21 +201,40 @@ export default function DiscoverPage() {
       {result && (
         <div className="bg-surface rounded-2xl border border-border p-6 sm:p-8 space-y-6">
           <div>
-            <p className="text-sm text-muted mb-1">You searched for</p>
+            <p className="text-sm text-muted mb-1">
+              You searched for{" "}
+              <span className="text-xs bg-stone-200 px-2 py-0.5 rounded-full ml-1">
+                {result.direction === "en-zh"
+                  ? "English → Chinese"
+                  : "Chinese → English"}
+              </span>
+            </p>
             <p className="text-xl font-bold">{result.query}</p>
           </div>
 
           <div>
             <label className="block text-sm font-bold mb-2 tracking-wide">
-              Chinese Translation
+              Chinese Characters
             </label>
             <input
               type="text"
-              value={selectedChinese}
-              onChange={(e) => setSelectedChinese(e.target.value)}
+              value={chineseValue}
+              onChange={(e) => setChineseValue(e.target.value)}
               className="w-full px-4 py-3 rounded-xl border border-border bg-background text-2xl font-medium focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
             />
-            {result.alternatives.length > 1 && (
+          </div>
+
+          <div>
+            <label className="block text-sm font-bold mb-2 tracking-wide">
+              English Meaning
+            </label>
+            <input
+              type="text"
+              value={englishValue}
+              onChange={(e) => setEnglishValue(e.target.value)}
+              className="w-full px-4 py-3 rounded-xl border border-border bg-background font-medium focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+            />
+            {result.alternatives.length > 1 && result.direction === "zh-en" && (
               <div className="mt-3">
                 <p className="text-xs text-muted mb-2">Alternatives from API:</p>
                 <div className="flex flex-wrap gap-2">
@@ -193,9 +242,32 @@ export default function DiscoverPage() {
                     <button
                       key={i}
                       type="button"
-                      onClick={() => setSelectedChinese(alt)}
+                      onClick={() => setEnglishValue(alt)}
                       className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-all ${
-                        selectedChinese === alt
+                        englishValue === alt
+                          ? "bg-primary text-white border-primary"
+                          : "bg-background border-border hover:bg-stone-100"
+                      }`}
+                    >
+                      {alt}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            )}
+            {result.alternatives.length > 1 && result.direction === "en-zh" && (
+              <div className="mt-3">
+                <p className="text-xs text-muted mb-2">
+                  Alternative Chinese translations:
+                </p>
+                <div className="flex flex-wrap gap-2">
+                  {result.alternatives.map((alt, i) => (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() => setChineseValue(alt)}
+                      className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-all ${
+                        chineseValue === alt
                           ? "bg-primary text-white border-primary"
                           : "bg-background border-border hover:bg-stone-100"
                       }`}
@@ -224,7 +296,6 @@ export default function DiscoverPage() {
             </p>
           </div>
 
-          {/* Example sentences from Tatoeba */}
           <div>
             <label className="block text-sm font-bold mb-2 tracking-wide">
               Example Sentences{" "}
@@ -298,7 +369,11 @@ export default function DiscoverPage() {
             type="button"
             onClick={handleSave}
             disabled={
-              !selectedChinese.trim() || !pinyinValue.trim() || saving || saved
+              !chineseValue.trim() ||
+              !englishValue.trim() ||
+              !pinyinValue.trim() ||
+              saving ||
+              saved
             }
             className="w-full py-3.5 px-6 bg-primary hover:bg-primary-dark text-white font-bold rounded-xl transition-all duration-200 text-lg cursor-pointer hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
           >
