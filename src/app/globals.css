@@ -1,41 +1,126 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fafaf9;
-  --foreground: #1c1917;
-  --primary: #16a34a;
-  --primary-dark: #15803d;
-  --primary-light: #dcfce7;
-  --accent: #ea580c;
-  --accent-light: #fff7ed;
-  --surface: #ffffff;
-  --muted: #78716c;
-  --border: #e7e5e4;
-  --border-hover: #d6d3d1;
+  /* Paper — warm cream */
+  --background: #f8f3e9;
+  --surface: #fffdf9;
+  --surface-raised: #ffffff;
+
+  /* Ink — deep warm black */
+  --foreground: #1b1611;
+  --muted: #6b5f54;
+  --muted-strong: #4a4038;
+
+  /* Oxblood — primary accent (nods to Chinese tradition) */
+  --primary: #8a2b2b;
+  --primary-dark: #6e2020;
+  --primary-light: #f6e5e2;
+
+  /* Jade — secondary (success, mastered) */
+  --jade: #3a6b4f;
+  --jade-dark: #2d5340;
+  --jade-light: #e4ebe1;
+
+  /* Gold — accent highlights */
+  --accent: #a17a3a;
+  --accent-dark: #7e5e2b;
+  --accent-light: #f5ecdc;
+
+  /* Paper edges */
+  --border: #e4d9c7;
+  --border-hover: #cebda4;
+  --rule: #2a201860;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-surface: var(--surface);
+  --color-surface-raised: var(--surface-raised);
   --color-primary: var(--primary);
   --color-primary-dark: var(--primary-dark);
   --color-primary-light: var(--primary-light);
+  --color-jade: var(--jade);
+  --color-jade-dark: var(--jade-dark);
+  --color-jade-light: var(--jade-light);
   --color-accent: var(--accent);
+  --color-accent-dark: var(--accent-dark);
   --color-accent-light: var(--accent-light);
-  --color-surface: var(--surface);
   --color-muted: var(--muted);
+  --color-muted-strong: var(--muted-strong);
   --color-border: var(--border);
   --color-border-hover: var(--border-hover);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+
+  --font-display: var(--font-fraunces), "Iowan Old Style", "Palatino", "Georgia", serif;
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), "SF Mono", monospace;
+  --font-cjk: var(--font-noto-serif-sc), "Noto Serif SC", "Songti SC", "STSong", serif;
+}
+
+html {
+  text-size-adjust: 100%;
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-sans), system-ui, -apple-system, sans-serif;
+  font-family: var(--font-sans);
+  font-feature-settings: "ss01", "cv11";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* Subtle paper texture via layered gradients */
+  background-image:
+    radial-gradient(at 15% 8%, rgba(161, 122, 58, 0.04) 0%, transparent 45%),
+    radial-gradient(at 85% 92%, rgba(138, 43, 43, 0.03) 0%, transparent 45%);
+}
+
+/* Display family — used for headings, hero numbers, marque */
+.font-display {
+  font-family: var(--font-display);
+  font-optical-sizing: auto;
+  letter-spacing: -0.02em;
+}
+
+/* Chinese characters — give them proper weight and breathing room */
+.font-cjk {
+  font-family: var(--font-cjk);
+  font-feature-settings: "palt";
+}
+
+/* Small caps label — used for section eyebrows */
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* Decorative horizontal rule used between sections */
+.rule {
+  height: 1px;
+  background: linear-gradient(
+    to right,
+    transparent,
+    var(--border-hover) 20%,
+    var(--border-hover) 80%,
+    transparent
+  );
+}
+
+/* Focus rings use primary for coherence */
+:where(input, textarea, select, button):focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
 }
 
 * {
   -webkit-tap-highlight-color: transparent;
+}
+
+/* Selection in oxblood */
+::selection {
+  background: var(--primary);
+  color: var(--surface);
 }

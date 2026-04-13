@@ -163,207 +163,231 @@ export default function DiscoverPage() {
     }, 1500);
   }
 
+  const inputFieldClass =
+    "w-full px-4 py-3 rounded-sm border border-border bg-surface text-foreground placeholder:text-muted/60 focus:outline-none focus:border-primary transition-colors";
+  const labelClass = "eyebrow block mb-2";
+
   return (
     <div className="max-w-2xl mx-auto">
-      <div className="mb-8">
-        <h1 className="text-4xl font-extrabold tracking-tight mb-2">
-          Discover Words
+      {/* Masthead */}
+      <header className="mb-12">
+        <p className="eyebrow mb-3">Reference &middot; Dictionary</p>
+        <h1 className="font-display text-[clamp(2.25rem,5vw,3.75rem)] leading-[1.05] tracking-tight">
+          Discover <span className="italic text-primary">a new word.</span>
         </h1>
-        <p className="text-muted text-lg">
-          Type an English or Chinese word. Get the translation, pinyin with
-          tones, and real example sentences.
+        <p className="mt-5 text-lg text-muted-strong max-w-xl leading-relaxed">
+          Type in either direction. See the translation, pinyin with tones, and
+          real example sentences from native speakers.
         </p>
-      </div>
+      </header>
 
-      <form onSubmit={handleSearch} className="flex gap-2 mb-6">
-        <input
-          type="text"
-          value={query}
-          onChange={(e) => setQuery(e.target.value)}
-          placeholder="e.g. hello, 歌手, happiness, 茶"
-          className="flex-1 px-4 py-3 rounded-xl border border-border bg-background text-lg placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
-        />
-        <button
-          type="submit"
-          disabled={loading || !query.trim()}
-          className="px-6 py-3 bg-primary hover:bg-primary-dark text-white font-bold rounded-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-        >
-          {loading ? "Searching..." : "Translate"}
-        </button>
+      {/* Search — editorial, typographic */}
+      <form
+        onSubmit={handleSearch}
+        className="border-t border-b border-border py-6 mb-8"
+      >
+        <label className="eyebrow block mb-3">Look up</label>
+        <div className="flex gap-3 items-stretch">
+          <input
+            type="text"
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="hello &middot; 歌手 &middot; happiness &middot; 茶"
+            className="flex-1 px-0 py-2 bg-transparent text-2xl font-display border-0 border-b-2 border-border focus:border-foreground focus:outline-none transition-colors placeholder:text-muted/50 placeholder:italic"
+          />
+          <button
+            type="submit"
+            disabled={loading || !query.trim()}
+            className="shrink-0 px-6 py-2 bg-foreground text-surface text-sm font-semibold tracking-wide uppercase rounded-sm hover:bg-muted-strong transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          >
+            {loading ? "Searching…" : "Translate"}
+          </button>
+        </div>
       </form>
 
       {error && (
-        <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-2xl text-red-700">
-          {error}
+        <div className="mb-8 p-5 border-l-2 border-primary bg-primary-light/40">
+          <p className="eyebrow text-primary mb-1">Error</p>
+          <p className="text-muted-strong">{error}</p>
         </div>
       )}
 
       {result && (
-        <div className="bg-surface rounded-2xl border border-border p-6 sm:p-8 space-y-6">
-          <div>
-            <p className="text-sm text-muted mb-1">
-              You searched for{" "}
-              <span className="text-xs bg-stone-200 px-2 py-0.5 rounded-full ml-1">
-                {result.direction === "en-zh"
-                  ? "English → Chinese"
-                  : "Chinese → English"}
-              </span>
+        <article className="space-y-10">
+          {/* Hero word — centered, like a dictionary entry */}
+          <div className="text-center py-10 border-t-2 border-b border-foreground">
+            <p className="eyebrow mb-5">
+              {result.direction === "en-zh"
+                ? "English → Chinese"
+                : "Chinese → English"}
             </p>
-            <p className="text-xl font-bold">{result.query}</p>
+            <p className="font-cjk text-[clamp(3rem,10vw,5.5rem)] leading-none font-medium text-foreground tracking-normal">
+              {chineseValue || "—"}
+            </p>
+            <p className="font-mono text-lg text-primary mt-5">
+              {pinyinValue || "—"}
+            </p>
+            <p className="font-display italic text-xl text-muted-strong mt-2">
+              {englishValue || "—"}
+            </p>
+          </div>
+
+          {/* Form fields — editable */}
+          <div className="grid sm:grid-cols-2 gap-6">
+            <div>
+              <label className={labelClass}>Chinese</label>
+              <input
+                type="text"
+                value={chineseValue}
+                onChange={(e) => setChineseValue(e.target.value)}
+                className={`${inputFieldClass} font-cjk text-xl`}
+              />
+            </div>
+            <div>
+              <label className={labelClass}>English</label>
+              <input
+                type="text"
+                value={englishValue}
+                onChange={(e) => setEnglishValue(e.target.value)}
+                className={inputFieldClass}
+              />
+            </div>
           </div>
 
           <div>
-            <label className="block text-sm font-bold mb-2 tracking-wide">
-              Chinese Characters
-            </label>
-            <input
-              type="text"
-              value={chineseValue}
-              onChange={(e) => setChineseValue(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-border bg-background text-2xl font-medium focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
-            />
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold mb-2 tracking-wide">
-              English Meaning
-            </label>
-            <input
-              type="text"
-              value={englishValue}
-              onChange={(e) => setEnglishValue(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-border bg-background font-medium focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
-            />
-            {result.alternatives.length > 1 && result.direction === "zh-en" && (
-              <div className="mt-3">
-                <p className="text-xs text-muted mb-2">Alternatives from API:</p>
-                <div className="flex flex-wrap gap-2">
-                  {result.alternatives.map((alt, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setEnglishValue(alt)}
-                      className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-all ${
-                        englishValue === alt
-                          ? "bg-primary text-white border-primary"
-                          : "bg-background border-border hover:bg-stone-100"
-                      }`}
-                    >
-                      {alt}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-            {result.alternatives.length > 1 && result.direction === "en-zh" && (
-              <div className="mt-3">
-                <p className="text-xs text-muted mb-2">
-                  Alternative Chinese translations:
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {result.alternatives.map((alt, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setChineseValue(alt)}
-                      className={`px-3 py-1.5 rounded-lg text-sm font-medium border transition-all ${
-                        chineseValue === alt
-                          ? "bg-primary text-white border-primary"
-                          : "bg-background border-border hover:bg-stone-100"
-                      }`}
-                    >
-                      {alt}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
-
-          <div>
-            <label className="block text-sm font-bold mb-2 tracking-wide">
-              Pinyin (auto-generated with tones)
+            <label className={labelClass}>
+              Pinyin <span className="normal-case tracking-normal text-muted">— auto-generated</span>
             </label>
             <input
               type="text"
               value={pinyinValue}
               onChange={(e) => setPinyinValue(e.target.value)}
-              placeholder="e.g. nǐ hǎo"
-              className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+              placeholder="nǐ hǎo"
+              className={`${inputFieldClass} font-mono`}
             />
-            <p className="text-xs text-muted mt-1">
-              Generated from pinyin-pro. Edit if needed.
-            </p>
           </div>
 
+          {/* Alternatives */}
+          {result.alternatives.length > 1 && (
+            <div>
+              <label className={labelClass}>
+                {result.direction === "zh-en"
+                  ? "Other English translations"
+                  : "Other Chinese translations"}
+              </label>
+              <div className="flex flex-wrap gap-2">
+                {result.alternatives.map((alt, i) => {
+                  const isEnglish = result.direction === "zh-en";
+                  const selected = isEnglish
+                    ? englishValue === alt
+                    : chineseValue === alt;
+                  return (
+                    <button
+                      key={i}
+                      type="button"
+                      onClick={() =>
+                        isEnglish ? setEnglishValue(alt) : setChineseValue(alt)
+                      }
+                      className={`px-3 py-1.5 rounded-sm text-sm border transition-colors ${
+                        isEnglish ? "" : "font-cjk text-base"
+                      } ${
+                        selected
+                          ? "bg-foreground text-surface border-foreground"
+                          : "bg-surface border-border hover:border-border-hover text-muted-strong"
+                      }`}
+                    >
+                      {alt}
+                    </button>
+                  );
+                })}
+              </div>
+            </div>
+          )}
+
+          {/* Tatoeba examples — like a citations section */}
           <div>
-            <label className="block text-sm font-bold mb-2 tracking-wide">
-              Example Sentences{" "}
-              <span className="text-xs font-normal text-muted">
-                (from Tatoeba)
+            <label className={labelClass}>
+              Example sentences{" "}
+              <span className="normal-case tracking-normal text-muted">
+                — from Tatoeba
               </span>
             </label>
             {examplesLoading && (
-              <p className="text-sm text-muted">Loading examples...</p>
+              <p className="italic text-muted font-display">Gathering sentences…</p>
             )}
             {!examplesLoading && examples.length === 0 && (
-              <p className="text-sm text-muted">
-                No example sentences found. You can write your own below.
+              <p className="italic text-muted font-display">
+                No example sentences available. Write your own below.
               </p>
             )}
             {examples.length > 0 && (
-              <div className="space-y-2 max-h-64 overflow-y-auto">
-                {examples.map((s, i) => (
-                  <button
-                    key={i}
-                    type="button"
-                    onClick={() => setExample(s.chinese)}
-                    className={`w-full text-left p-3 rounded-xl border transition-all ${
-                      example === s.chinese
-                        ? "border-primary bg-primary-light"
-                        : "border-border bg-background hover:bg-stone-100"
-                    }`}
-                  >
-                    <p className="text-base font-medium">{s.chinese}</p>
-                    {s.english && (
-                      <p className="text-sm text-muted mt-1">{s.english}</p>
-                    )}
-                  </button>
-                ))}
-              </div>
+              <ol className="space-y-0 max-h-80 overflow-y-auto border-y border-border">
+                {examples.map((s, i) => {
+                  const selected = example === s.chinese;
+                  return (
+                    <li
+                      key={i}
+                      className="border-b border-border last:border-b-0"
+                    >
+                      <button
+                        type="button"
+                        onClick={() => setExample(s.chinese)}
+                        className={`w-full text-left px-4 py-4 transition-colors flex gap-4 items-baseline ${
+                          selected
+                            ? "bg-primary-light"
+                            : "hover:bg-surface"
+                        }`}
+                      >
+                        <span className="font-display text-xs text-muted shrink-0 w-5">
+                          {String(i + 1).padStart(2, "0")}
+                        </span>
+                        <div className="flex-1 min-w-0">
+                          <p className="font-cjk text-lg leading-snug text-foreground">
+                            {s.chinese}
+                          </p>
+                          {s.english && (
+                            <p className="text-sm text-muted-strong italic mt-1 font-display leading-snug">
+                              {s.english}
+                            </p>
+                          )}
+                        </div>
+                      </button>
+                    </li>
+                  );
+                })}
+              </ol>
             )}
           </div>
 
-          <div>
-            <label className="block text-sm font-bold mb-2 tracking-wide">
-              Selected Example{" "}
-              <span className="text-xs font-normal text-muted">(optional)</span>
-            </label>
-            <textarea
-              value={example}
-              onChange={(e) => setExample(e.target.value)}
-              rows={2}
-              placeholder="Click an example above, or write your own"
-              className="w-full px-4 py-3 rounded-xl border border-border bg-background placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all resize-none"
-            />
+          {/* Example + category */}
+          <div className="grid sm:grid-cols-[2fr_1fr] gap-6">
+            <div>
+              <label className={labelClass}>Selected example</label>
+              <textarea
+                value={example}
+                onChange={(e) => setExample(e.target.value)}
+                rows={2}
+                placeholder="Click an example above, or write your own"
+                className={`${inputFieldClass} font-cjk text-base resize-none`}
+              />
+            </div>
+            <div>
+              <label className={labelClass}>Category</label>
+              <select
+                value={category}
+                onChange={(e) => setCategory(e.target.value)}
+                className={inputFieldClass}
+              >
+                {CATEGORIES.map((cat) => (
+                  <option key={cat} value={cat}>
+                    {cat.charAt(0).toUpperCase() + cat.slice(1)}
+                  </option>
+                ))}
+              </select>
+            </div>
           </div>
 
-          <div>
-            <label className="block text-sm font-bold mb-2 tracking-wide">
-              Category
-            </label>
-            <select
-              value={category}
-              onChange={(e) => setCategory(e.target.value)}
-              className="w-full px-4 py-3 rounded-xl border border-border bg-background focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
-            >
-              {CATEGORIES.map((cat) => (
-                <option key={cat} value={cat}>
-                  {cat.charAt(0).toUpperCase() + cat.slice(1)}
-                </option>
-              ))}
-            </select>
-          </div>
+          <div className="rule" />
 
           <button
             type="button"
@@ -375,15 +399,19 @@ export default function DiscoverPage() {
               saving ||
               saved
             }
-            className="w-full py-3.5 px-6 bg-primary hover:bg-primary-dark text-white font-bold rounded-xl transition-all duration-200 text-lg cursor-pointer hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed"
+            className={`w-full py-4 px-6 text-base font-semibold tracking-wide uppercase rounded-sm transition-all duration-200 ${
+              saved
+                ? "bg-jade text-surface"
+                : "bg-primary hover:bg-primary-dark text-surface"
+            } disabled:opacity-40 disabled:cursor-not-allowed`}
           >
             {saved
-              ? "✓ Saved to your vocabulary"
+              ? "✓ Saved to your journal"
               : saving
-              ? "Saving..."
-              : "Save to My Vocabulary"}
+              ? "Saving…"
+              : "Save to my journal"}
           </button>
-        </div>
+        </article>
       )}
     </div>
   );
