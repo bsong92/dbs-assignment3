@@ -17,23 +17,16 @@ export default function DashboardPage() {
   const masteryPct =
     totalWords > 0 ? Math.round((masteredWords / totalWords) * 100) : 0;
 
-  const today = new Date().toLocaleDateString("en-US", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-  });
-
   return (
     <div className="space-y-16">
       {/* Masthead */}
-      <header className="relative">
-        <p className="eyebrow mb-6">{today} · Edition 001</p>
-        <h1 className="font-display text-[clamp(2.5rem,6vw,4.5rem)] leading-[1.05] tracking-tight text-foreground">
+      <header className="relative text-center">
+        <h1 className="font-display text-[clamp(2rem,4.5vw,3.5rem)] leading-[1.1] tracking-tight text-foreground">
           A journal for
           <br />
           <span className="italic text-primary">patient students.</span>
         </h1>
-        <p className="mt-6 text-lg text-muted-strong max-w-2xl leading-relaxed">
+        <p className="mt-6 text-lg text-muted-strong max-w-2xl mx-auto leading-relaxed">
           Collect Chinese words you want to keep. Return to them deliberately.
           Build a vocabulary that stays.
         </p>
@@ -97,16 +90,16 @@ export default function DashboardPage() {
 
       {/* Recent Words */}
       <section>
-        <div className="flex items-baseline justify-between mb-6">
+        <div className="flex items-baseline justify-between mb-8">
           <div>
-            <p className="eyebrow mb-1">Recent additions</p>
-            <h2 className="font-display text-3xl tracking-tight">
+            <p className="eyebrow mb-2">Recent additions</p>
+            <h2 className="font-display text-4xl tracking-tight text-foreground">
               Lately in your journal
             </h2>
           </div>
           <Link
             href="/vocab"
-            className="text-sm font-medium text-primary hover:text-primary-dark transition-colors underline-offset-4 hover:underline"
+            className="text-base font-semibold text-primary hover:text-primary-dark transition-colors underline-offset-4 hover:underline"
           >
             See all →
           </Link>
@@ -130,22 +123,22 @@ export default function DashboardPage() {
               <li key={entry.id} className="border-b border-border">
                 <Link
                   href={`/vocab/${entry.id}`}
-                  className="group flex items-center justify-between gap-6 py-5 transition-colors"
+                  className="group flex items-center justify-between gap-6 py-6 transition-colors"
                 >
                   <div className="flex items-center gap-6 min-w-0">
-                    <span className="font-cjk text-3xl sm:text-4xl font-medium text-foreground group-hover:text-primary transition-colors whitespace-nowrap">
+                    <span className="font-cjk text-4xl sm:text-5xl font-medium text-foreground group-hover:text-primary transition-colors whitespace-nowrap">
                       {entry.chinese}
                     </span>
                     <div className="min-w-0">
-                      <p className="font-mono text-sm text-muted truncate">
+                      <p className="font-mono text-base text-foreground font-medium truncate">
                         {entry.pinyin}
                       </p>
-                      <p className="font-medium text-foreground truncate">
+                      <p className="text-lg font-semibold text-foreground truncate">
                         {entry.english}
                       </p>
                     </div>
                   </div>
-                  <span className="eyebrow shrink-0 hidden sm:inline">
+                  <span className="shrink-0 hidden sm:inline text-xs font-bold tracking-[0.18em] uppercase text-foreground">
                     {entry.category}
                   </span>
                 </Link>
@@ -178,15 +171,17 @@ function Stat({
 
   return (
     <div className="lg:pl-8 first:lg:pl-0">
-      <p className={`font-display text-6xl leading-none ${accentClass}`}>
+      <p
+        className={`font-display text-6xl leading-none font-semibold ${accentClass}`}
+      >
         {value}
         {suffix && (
-          <span className="text-2xl text-muted ml-1 tracking-tight">
+          <span className="text-2xl text-muted-strong ml-1 tracking-tight font-normal">
             {suffix}
           </span>
         )}
       </p>
-      <p className="eyebrow mt-3">{label}</p>
+      <p className="eyebrow mt-3 text-muted-strong">{label}</p>
     </div>
   );
 }
@@ -204,9 +199,11 @@ function ActionCard({
   body: string;
   tone: "primary" | "ink";
 }) {
+  // Deep rust for "primary" tone — darker than terracotta but clearly
+  // distinct from the near-black ink used by the "ink" tone
   const styles =
     tone === "primary"
-      ? "bg-primary text-surface hover:bg-primary-dark"
+      ? "bg-[#7a3a2d] text-surface hover:bg-[#6b3026]"
       : "bg-foreground text-surface hover:bg-muted-strong";
 
   return (
@@ -214,16 +211,16 @@ function ActionCard({
       href={href}
       className={`group relative block p-8 rounded-sm transition-all duration-300 hover:-translate-y-0.5 ${styles}`}
     >
-      <p className="text-[0.7rem] font-semibold tracking-[0.22em] uppercase text-surface/70 mb-4">
+      <p className="text-[0.82rem] font-bold tracking-[0.18em] uppercase text-surface/85 mb-4">
         {eyebrow}
       </p>
-      <h3 className="font-display text-3xl leading-tight mb-3 tracking-tight">
+      <h3 className="font-display text-3xl sm:text-4xl leading-tight mb-3 tracking-tight">
         {title}
       </h3>
-      <p className="text-sm text-surface/85 leading-relaxed max-w-sm">
+      <p className="text-base text-surface/95 leading-relaxed max-w-sm">
         {body}
       </p>
-      <span className="absolute top-8 right-8 text-2xl transition-transform group-hover:translate-x-1">
+      <span className="absolute top-8 right-8 text-3xl transition-transform group-hover:translate-x-1">
         →
       </span>
     </Link>

@@ -164,8 +164,9 @@ export default function DiscoverPage() {
   }
 
   const inputFieldClass =
-    "w-full px-4 py-3 rounded-sm border border-border bg-surface text-foreground placeholder:text-muted/60 focus:outline-none focus:border-primary transition-colors";
-  const labelClass = "eyebrow block mb-2";
+    "w-full px-4 py-3.5 rounded-sm border border-border bg-surface text-foreground text-lg placeholder:text-muted/70 focus:outline-none focus:border-primary transition-colors";
+  const labelClass =
+    "eyebrow block mb-3 text-sm"; // slightly bigger eyebrow throughout the page
 
   return (
     <div className="max-w-2xl mx-auto">
@@ -184,21 +185,21 @@ export default function DiscoverPage() {
       {/* Search — editorial, typographic */}
       <form
         onSubmit={handleSearch}
-        className="border-t border-b border-border py-6 mb-8"
+        className="border-t border-b border-border py-7 mb-10"
       >
-        <label className="eyebrow block mb-3">Look up</label>
+        <label className="eyebrow block mb-4 text-sm">Look up</label>
         <div className="flex gap-3 items-stretch">
           <input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="hello &middot; 歌手 &middot; happiness &middot; 茶"
-            className="flex-1 px-0 py-2 bg-transparent text-2xl font-display border-0 border-b-2 border-border focus:border-foreground focus:outline-none transition-colors placeholder:text-muted/50 placeholder:italic"
+            className="flex-1 px-0 py-2 bg-transparent text-3xl font-display border-0 border-b-2 border-border focus:border-foreground focus:outline-none transition-colors placeholder:text-muted/60 placeholder:italic text-foreground"
           />
           <button
             type="submit"
             disabled={loading || !query.trim()}
-            className="shrink-0 px-6 py-2 bg-foreground text-surface text-sm font-semibold tracking-wide uppercase rounded-sm hover:bg-muted-strong transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+            className="shrink-0 px-6 py-3 bg-foreground text-surface text-base font-semibold tracking-wide uppercase rounded-sm hover:bg-muted-strong transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
           >
             {loading ? "Searching…" : "Translate"}
           </button>
@@ -240,7 +241,7 @@ export default function DiscoverPage() {
                 type="text"
                 value={chineseValue}
                 onChange={(e) => setChineseValue(e.target.value)}
-                className={`${inputFieldClass} font-cjk text-xl`}
+                className={`${inputFieldClass} font-cjk text-2xl`}
               />
             </div>
             <div>
@@ -249,21 +250,24 @@ export default function DiscoverPage() {
                 type="text"
                 value={englishValue}
                 onChange={(e) => setEnglishValue(e.target.value)}
-                className={inputFieldClass}
+                className={`${inputFieldClass} text-xl`}
               />
             </div>
           </div>
 
           <div>
             <label className={labelClass}>
-              Pinyin <span className="normal-case tracking-normal text-muted">— auto-generated</span>
+              Pinyin{" "}
+              <span className="normal-case tracking-normal text-foreground/80">
+                — auto-generated
+              </span>
             </label>
             <input
               type="text"
               value={pinyinValue}
               onChange={(e) => setPinyinValue(e.target.value)}
               placeholder="nǐ hǎo"
-              className={`${inputFieldClass} font-mono`}
+              className={`${inputFieldClass} font-mono text-xl`}
             />
           </div>
 
@@ -288,12 +292,14 @@ export default function DiscoverPage() {
                       onClick={() =>
                         isEnglish ? setEnglishValue(alt) : setChineseValue(alt)
                       }
-                      className={`px-3 py-1.5 rounded-sm text-sm border transition-colors ${
-                        isEnglish ? "" : "font-cjk text-base"
+                      className={`px-4 py-2 rounded-sm border transition-colors ${
+                        isEnglish
+                          ? "text-base font-medium"
+                          : "font-cjk text-xl"
                       } ${
                         selected
                           ? "bg-foreground text-surface border-foreground"
-                          : "bg-surface border-border hover:border-border-hover text-muted-strong"
+                          : "bg-surface border-border hover:border-border-hover text-foreground"
                       }`}
                     >
                       {alt}
@@ -308,20 +314,22 @@ export default function DiscoverPage() {
           <div>
             <label className={labelClass}>
               Example sentences{" "}
-              <span className="normal-case tracking-normal text-muted">
+              <span className="normal-case tracking-normal text-foreground/80">
                 — from Tatoeba
               </span>
             </label>
             {examplesLoading && (
-              <p className="italic text-muted font-display">Gathering sentences…</p>
+              <p className="italic text-foreground font-display text-lg">
+                Gathering sentences…
+              </p>
             )}
             {!examplesLoading && examples.length === 0 && (
-              <p className="italic text-muted font-display">
+              <p className="italic text-foreground font-display text-lg">
                 No example sentences available. Write your own below.
               </p>
             )}
             {examples.length > 0 && (
-              <ol className="space-y-0 max-h-80 overflow-y-auto border-y border-border">
+              <ol className="space-y-0 max-h-96 overflow-y-auto border-y border-border">
                 {examples.map((s, i) => {
                   const selected = example === s.chinese;
                   return (
@@ -332,21 +340,21 @@ export default function DiscoverPage() {
                       <button
                         type="button"
                         onClick={() => setExample(s.chinese)}
-                        className={`w-full text-left px-4 py-4 transition-colors flex gap-4 items-baseline ${
+                        className={`w-full text-left px-5 py-5 transition-colors flex gap-4 items-baseline ${
                           selected
                             ? "bg-primary-light"
                             : "hover:bg-surface"
                         }`}
                       >
-                        <span className="font-display text-xs text-muted shrink-0 w-5">
+                        <span className="font-display text-sm font-semibold text-foreground shrink-0 w-6">
                           {String(i + 1).padStart(2, "0")}
                         </span>
                         <div className="flex-1 min-w-0">
-                          <p className="font-cjk text-lg leading-snug text-foreground">
+                          <p className="font-cjk text-xl leading-snug text-foreground">
                             {s.chinese}
                           </p>
                           {s.english && (
-                            <p className="text-sm text-muted-strong italic mt-1 font-display leading-snug">
+                            <p className="text-base text-foreground italic mt-1.5 font-display leading-snug">
                               {s.english}
                             </p>
                           )}
@@ -368,7 +376,7 @@ export default function DiscoverPage() {
                 onChange={(e) => setExample(e.target.value)}
                 rows={2}
                 placeholder="Click an example above, or write your own"
-                className={`${inputFieldClass} font-cjk text-base resize-none`}
+                className={`${inputFieldClass} font-cjk text-lg resize-none`}
               />
             </div>
             <div>
@@ -399,7 +407,7 @@ export default function DiscoverPage() {
               saving ||
               saved
             }
-            className={`w-full py-4 px-6 text-base font-semibold tracking-wide uppercase rounded-sm transition-all duration-200 ${
+            className={`w-full py-5 px-6 text-lg font-semibold tracking-wide uppercase rounded-sm transition-all duration-200 ${
               saved
                 ? "bg-jade text-surface"
                 : "bg-primary hover:bg-primary-dark text-surface"

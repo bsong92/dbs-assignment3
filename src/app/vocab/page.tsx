@@ -4,7 +4,17 @@ import { useState } from "react";
 import Link from "next/link";
 import { useVocab } from "@/context/VocabContext";
 
-const ALL_CATEGORIES = ["all", "greetings", "food", "travel", "shopping", "numbers", "daily", "work", "other"];
+const ALL_CATEGORIES = [
+  "all",
+  "greetings",
+  "food",
+  "travel",
+  "shopping",
+  "numbers",
+  "daily",
+  "work",
+  "other",
+];
 
 export default function VocabPage() {
   const { entries } = useVocab();
@@ -13,7 +23,10 @@ export default function VocabPage() {
 
   // Strip tone marks so "bukeqi" matches "bú kè qi"
   const stripTones = (s: string) =>
-    s.normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/\s+/g, "");
+    s
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\s+/g, "");
 
   const filtered = entries.filter((entry) => {
     const matchesCategory = category === "all" || entry.category === category;
@@ -29,89 +42,108 @@ export default function VocabPage() {
   });
 
   return (
-    <div className="space-y-8">
-      <div>
-        <h1 className="text-4xl font-extrabold tracking-tight mb-2">Vocabulary</h1>
-        <p className="text-muted text-lg">
+    <div className="space-y-12">
+      {/* Masthead */}
+      <header className="text-center">
+        <p className="eyebrow mb-3">Index</p>
+        <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] leading-[1.05] tracking-tight text-foreground">
+          Vocabulary
+        </h1>
+        <p className="mt-4 text-lg text-foreground">
           {entries.length} word{entries.length !== 1 ? "s" : ""} in your journal
         </p>
-      </div>
+      </header>
+
+      <div className="rule" />
 
       {/* Filters */}
-      <div className="flex flex-col sm:flex-row gap-3">
-        <div className="relative flex-1">
-          <svg className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-muted" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-            <path strokeLinecap="round" strokeLinejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-          </svg>
+      <div className="space-y-5">
+        <div>
+          <label className="eyebrow block mb-3">Search</label>
           <input
             type="text"
-            placeholder="Search by Chinese, pinyin, or English..."
+            placeholder="Chinese, pinyin, or English"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full pl-10 pr-4 py-3 rounded-xl border border-border bg-surface placeholder:text-muted/50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary transition-all"
+            className="w-full px-0 py-2 bg-transparent text-xl font-display border-0 border-b-2 border-border focus:border-foreground focus:outline-none transition-colors placeholder:text-muted placeholder:italic text-foreground"
           />
         </div>
-        <div className="flex gap-1.5 flex-wrap">
-          {ALL_CATEGORIES.map((cat) => (
-            <button
-              key={cat}
-              onClick={() => setCategory(cat)}
-              className={`px-3.5 py-2 rounded-lg text-sm font-semibold transition-all duration-200 cursor-pointer capitalize ${
-                category === cat
-                  ? "bg-primary text-white shadow-sm"
-                  : "bg-surface border border-border text-muted hover:text-foreground hover:border-border-hover"
-              }`}
-            >
-              {cat === "all" ? "All" : cat}
-            </button>
-          ))}
+
+        <div>
+          <label className="eyebrow block mb-3">Filter by category</label>
+          <div className="flex gap-2 flex-wrap">
+            {ALL_CATEGORIES.map((cat) => {
+              const selected = category === cat;
+              return (
+                <button
+                  key={cat}
+                  onClick={() => setCategory(cat)}
+                  className={`px-5 py-2.5 rounded-sm text-base font-semibold tracking-wide capitalize transition-colors ${
+                    selected
+                      ? "bg-foreground text-surface"
+                      : "bg-surface border border-border text-foreground hover:border-border-hover"
+                  }`}
+                >
+                  {cat === "all" ? "All" : cat}
+                </button>
+              );
+            })}
+          </div>
         </div>
       </div>
 
-      {/* Word List */}
+      {/* Word list */}
       {filtered.length === 0 ? (
-        <div className="text-center py-20">
-          <p className="text-xl text-muted font-medium">No words found.</p>
-          <p className="text-sm text-muted mt-2">
-            {entries.length === 0 ? (
-              <Link href="/add" className="text-primary hover:underline font-semibold">
-                Add your first word →
-              </Link>
-            ) : (
-              "Try adjusting your search or filter."
-            )}
+        <div className="py-16 text-center border-t border-b border-border">
+          <p className="font-display italic text-xl text-foreground">
+            {entries.length === 0
+              ? "The journal is waiting."
+              : "No words match that search."}
           </p>
+          {entries.length === 0 && (
+            <Link
+              href="/discover"
+              className="inline-block mt-3 text-base font-semibold text-primary hover:text-primary-dark underline-offset-4 hover:underline"
+            >
+              Add your first word →
+            </Link>
+          )}
         </div>
       ) : (
-        <div className="bg-surface rounded-2xl border border-border divide-y divide-border overflow-hidden">
+        <ul className="border-t-2 border-foreground">
           {filtered.map((entry) => (
-            <Link
-              key={entry.id}
-              href={`/vocab/${entry.id}`}
-              className="flex items-center justify-between p-4 hover:bg-stone-50 transition-colors group"
-            >
-              <div className="flex items-center gap-4">
-                <span className="text-2xl font-bold w-20 text-center group-hover:text-primary transition-colors">
-                  {entry.chinese}
-                </span>
-                <div>
-                  <p className="text-sm text-muted">{entry.pinyin}</p>
-                  <p className="font-medium">{entry.english}</p>
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-stone-100 text-muted capitalize">
-                  {entry.category}
-                </span>
-                {entry.mastered && (
-                  <span className="text-xs font-semibold px-2.5 py-1 rounded-full bg-primary-light text-primary-dark">
-                    ✓ mastered
+            <li key={entry.id} className="border-b border-border">
+              <Link
+                href={`/vocab/${entry.id}`}
+                className="group flex items-center justify-between gap-6 py-6 transition-colors hover:bg-surface/50"
+              >
+                <div className="flex items-center gap-6 min-w-0">
+                  <span className="font-cjk text-4xl sm:text-5xl font-medium text-foreground group-hover:text-primary transition-colors whitespace-nowrap">
+                    {entry.chinese}
                   </span>
-                )}
-              </div>
-            </Link>
+                  <div className="min-w-0">
+                    <p className="font-mono text-base font-medium text-foreground truncate">
+                      {entry.pinyin}
+                    </p>
+                    <p className="text-lg font-semibold text-foreground truncate">
+                      {entry.english}
+                    </p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-4 shrink-0">
+                  {entry.mastered && (
+                    <span className="eyebrow text-jade-dark">
+                      ✓ Mastered
+                    </span>
+                  )}
+                  <span className="eyebrow text-foreground hidden sm:inline">
+                    {entry.category}
+                  </span>
+                </div>
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       )}
     </div>
   );

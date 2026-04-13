@@ -24,9 +24,14 @@ function FlashcardMode({ entries }: { entries: VocabEntry[] }) {
 
   if (deck.length === 0) {
     return (
-      <div className="text-center py-16 text-muted">
-        <p className="text-xl font-medium">No words to review.</p>
-        <Link href="/add" className="text-primary hover:underline font-semibold mt-2 inline-block">
+      <div className="text-center py-20">
+        <p className="font-display italic text-2xl text-foreground">
+          No words to review.
+        </p>
+        <Link
+          href="/discover"
+          className="inline-block mt-4 text-lg font-semibold text-primary hover:text-primary-dark underline-offset-4 hover:underline"
+        >
           Add some words first →
         </Link>
       </div>
@@ -38,45 +43,61 @@ function FlashcardMode({ entries }: { entries: VocabEntry[] }) {
   const total = deck.length;
 
   return (
-    <div className="max-w-md mx-auto">
-      <p className="text-sm text-muted text-center mb-5 font-medium">
-        Card {((index % total) + 1)} of {total}
+    <div className="max-w-xl mx-auto">
+      <p className="text-center mb-6 text-base font-semibold text-foreground tracking-wide">
+        Card {(index % total) + 1} of {total}
       </p>
 
       <button
         onClick={() => setFlipped((f) => !f)}
-        className="w-full min-h-[300px] bg-surface rounded-2xl border-2 border-border hover:border-primary/30 transition-all duration-300 p-8 flex flex-col items-center justify-center cursor-pointer hover:shadow-lg group"
+        className="w-full min-h-[340px] bg-surface rounded-sm border-2 border-foreground transition-all duration-300 p-10 flex flex-col items-center justify-center cursor-pointer hover:shadow-xl group"
       >
         {!flipped ? (
           <>
-            <p className="text-6xl font-extrabold mb-4 group-hover:scale-105 transition-transform">
+            <p className="font-cjk text-7xl sm:text-8xl font-medium text-foreground mb-6 group-hover:scale-105 transition-transform">
               {current.chinese}
             </p>
-            <p className="text-sm text-muted font-medium">Tap to reveal</p>
+            <p className="text-base font-semibold text-foreground tracking-[0.15em] uppercase">
+              Tap to reveal
+            </p>
           </>
         ) : (
           <>
-            <p className="text-4xl font-extrabold mb-2">{current.chinese}</p>
-            <p className="text-lg text-muted mb-1">{current.pinyin}</p>
-            <p className="text-xl font-medium">{current.english}</p>
+            <p className="font-cjk text-5xl font-medium text-foreground mb-3">
+              {current.chinese}
+            </p>
+            <p className="font-mono text-xl text-primary mb-2">
+              {current.pinyin}
+            </p>
+            <p className="font-display text-2xl italic text-foreground">
+              {current.english}
+            </p>
             {current.example && (
-              <p className="text-sm text-muted mt-4 italic">&ldquo;{current.example}&rdquo;</p>
+              <p className="font-cjk text-lg text-foreground mt-6 leading-relaxed text-center max-w-md">
+                {current.example}
+              </p>
             )}
           </>
         )}
       </button>
 
-      <div className="flex gap-3 mt-6">
+      <div className="flex gap-3 mt-8">
         <button
-          onClick={() => { setFlipped(false); setIndex((i) => Math.max(0, i - 1)); }}
+          onClick={() => {
+            setFlipped(false);
+            setIndex((i) => Math.max(0, i - 1));
+          }}
           disabled={index === 0}
-          className="flex-1 py-3 px-4 rounded-xl font-bold bg-stone-100 text-foreground hover:bg-stone-200 transition-all disabled:opacity-30 disabled:cursor-not-allowed cursor-pointer active:scale-[0.98]"
+          className="flex-1 py-4 px-5 rounded-sm text-base font-semibold tracking-wide uppercase bg-surface border border-border text-foreground hover:border-border-hover transition-all disabled:opacity-30 disabled:cursor-not-allowed"
         >
           ← Previous
         </button>
         <button
-          onClick={() => { setFlipped(false); setIndex((i) => i + 1); }}
-          className="flex-1 py-3 px-4 rounded-xl font-bold bg-primary hover:bg-primary-dark text-white transition-all cursor-pointer hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98]"
+          onClick={() => {
+            setFlipped(false);
+            setIndex((i) => i + 1);
+          }}
+          className="flex-1 py-4 px-5 rounded-sm text-base font-semibold tracking-wide uppercase bg-primary hover:bg-primary-dark text-surface transition-all"
         >
           {progress >= total ? "Restart" : "Next →"}
         </button>
@@ -90,11 +111,14 @@ export default function ReviewPage() {
   const [category, setCategory] = useState("all");
   const [key, setKey] = useState(0);
 
-  const categories = ["all", ...new Set(entries.map((e) => e.category))].filter(Boolean);
+  const categories = ["all", ...new Set(entries.map((e) => e.category))].filter(
+    Boolean
+  );
 
-  const filtered = category === "all"
-    ? entries
-    : entries.filter((e) => e.category === category);
+  const filtered =
+    category === "all"
+      ? entries
+      : entries.filter((e) => e.category === category);
 
   const handleCategoryChange = (cat: string) => {
     setCategory(cat);
@@ -102,27 +126,47 @@ export default function ReviewPage() {
   };
 
   return (
-    <div className="space-y-8">
-      <div>
-        <h1 className="text-4xl font-extrabold tracking-tight mb-2">Review</h1>
-        <p className="text-muted text-lg">Flip through your vocabulary flashcards.</p>
-      </div>
+    <div className="space-y-12">
+      {/* Masthead */}
+      <header className="text-center">
+        <p className="eyebrow mb-3">Flashcards</p>
+        <h1 className="font-display text-[clamp(2.5rem,5vw,4rem)] leading-[1.05] tracking-tight text-foreground">
+          Review
+        </h1>
+        <p className="mt-4 text-lg text-foreground max-w-xl mx-auto">
+          Flip through your vocabulary and keep the words close.
+        </p>
+      </header>
+
+      <div className="rule" />
 
       {/* Category filter */}
-      <div className="flex gap-1.5 flex-wrap justify-center">
-        {categories.map((cat) => (
-          <button
-            key={cat}
-            onClick={() => handleCategoryChange(cat)}
-            className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 cursor-pointer capitalize ${
-              category === cat
-                ? "bg-accent text-white shadow-sm"
-                : "bg-surface border border-border text-muted hover:text-foreground hover:border-border-hover"
-            }`}
-          >
-            {cat === "all" ? `All (${entries.length})` : `${cat} (${entries.filter((e) => e.category === cat).length})`}
-          </button>
-        ))}
+      <div>
+        <label className="eyebrow block mb-4 text-center">
+          Filter by category
+        </label>
+        <div className="flex gap-2 flex-wrap justify-center">
+          {categories.map((cat) => {
+            const selected = category === cat;
+            const count =
+              cat === "all"
+                ? entries.length
+                : entries.filter((e) => e.category === cat).length;
+            return (
+              <button
+                key={cat}
+                onClick={() => handleCategoryChange(cat)}
+                className={`px-5 py-2.5 rounded-sm text-base font-semibold tracking-wide capitalize transition-colors ${
+                  selected
+                    ? "bg-foreground text-surface"
+                    : "bg-surface border border-border text-foreground hover:border-border-hover"
+                }`}
+              >
+                {cat === "all" ? `All (${count})` : `${cat} (${count})`}
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       <FlashcardMode key={`fc-${key}`} entries={filtered} />
