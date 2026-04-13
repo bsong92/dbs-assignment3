@@ -1,0 +1,70 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e6] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e7]:
+      - img [ref=e8]
+    - generic [ref=e11]:
+      - button "Open issues overlay" [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: "0"
+          - generic [ref=e15]: "1"
+        - generic [ref=e16]: Issue
+      - button "Collapse issues badge" [ref=e17]:
+        - img [ref=e18]
+  - navigation [ref=e20]:
+    - generic [ref=e22]:
+      - link "Wordkeep logo Wordkeep" [ref=e23] [cursor=pointer]:
+        - /url: /
+        - img "Wordkeep logo" [ref=e24]
+        - generic [ref=e25]: Wordkeep
+      - generic [ref=e26]:
+        - link "Dashboard" [ref=e27] [cursor=pointer]:
+          - /url: /
+        - link "Add Word" [ref=e28] [cursor=pointer]:
+          - /url: /add
+        - link "Vocabulary" [ref=e29] [cursor=pointer]:
+          - /url: /vocab
+        - link "Review" [ref=e30] [cursor=pointer]:
+          - /url: /review
+        - link "Practice" [ref=e31] [cursor=pointer]:
+          - /url: /practice
+        - link "Progress" [ref=e32] [cursor=pointer]:
+          - /url: /progress
+  - main [ref=e33]:
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - heading "Practice" [level=1] [ref=e36]
+        - paragraph [ref=e37]: Test your knowledge with games.
+      - generic [ref=e38]:
+        - button "Chinese → English See Chinese, pick the meaning" [ref=e39] [cursor=pointer]:
+          - generic [ref=e40]: Chinese → English
+          - text: See Chinese, pick the meaning
+        - button "English → Chinese See meaning, pick the Chinese" [ref=e41] [cursor=pointer]:
+          - generic [ref=e42]: English → Chinese
+          - text: See meaning, pick the Chinese
+        - button "Reconstruction Unscramble sentences" [ref=e43] [cursor=pointer]:
+          - generic [ref=e44]: Reconstruction
+          - text: Unscramble sentences
+      - generic [ref=e45]:
+        - button "All (120)" [ref=e46] [cursor=pointer]
+        - button "greetings (6)" [ref=e47] [cursor=pointer]
+        - button "food (8)" [ref=e48] [cursor=pointer]
+        - button "shopping (5)" [ref=e49] [cursor=pointer]
+        - button "travel (8)" [ref=e50] [cursor=pointer]
+        - button "daily (53)" [ref=e51] [cursor=pointer]
+        - button "work (20)" [ref=e52] [cursor=pointer]
+        - button "numbers (10)" [ref=e53] [cursor=pointer]
+        - button "other (10)" [ref=e54] [cursor=pointer]
+      - generic [ref=e55]:
+        - paragraph [ref=e58]: Question 1 of 10
+        - generic [ref=e59]:
+          - paragraph [ref=e60]: 发音
+          - paragraph [ref=e61]: fā yīn
+        - paragraph [ref=e62]: What does this mean?
+        - generic [ref=e63]:
+          - button "to exercise / work out" [ref=e64] [cursor=pointer]
+          - button "already" [ref=e65] [cursor=pointer]
+          - button "pronunciation" [ref=e66] [cursor=pointer]
+          - button "kung fu / skill / effort" [ref=e67] [cursor=pointer]
+  - contentinfo [ref=e68]:
+    - paragraph [ref=e69]: Wordkeep — Built for learning Chinese, one word at a time.
+  - alert [ref=e70]

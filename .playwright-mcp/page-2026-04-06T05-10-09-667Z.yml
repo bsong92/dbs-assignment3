@@ -1,0 +1,57 @@
+- generic [active] [ref=e1]:
+  - generic [ref=e6] [cursor=pointer]:
+    - button "Open Next.js Dev Tools" [ref=e7]:
+      - img [ref=e8]
+    - generic [ref=e11]:
+      - button "Open issues overlay" [ref=e12]:
+        - generic [ref=e13]:
+          - generic [ref=e14]: "0"
+          - generic [ref=e15]: "1"
+        - generic [ref=e16]: Issue
+      - button "Collapse issues badge" [ref=e17]:
+        - img [ref=e18]
+  - navigation [ref=e20]:
+    - generic [ref=e22]:
+      - link "Wordkeep logo Wordkeep" [ref=e23] [cursor=pointer]:
+        - /url: /
+        - img "Wordkeep logo" [ref=e24]
+        - generic [ref=e25]: Wordkeep
+      - generic [ref=e26]:
+        - link "Dashboard" [ref=e27] [cursor=pointer]:
+          - /url: /
+        - link "Add Word" [ref=e28] [cursor=pointer]:
+          - /url: /add
+        - link "Vocabulary" [ref=e29] [cursor=pointer]:
+          - /url: /vocab
+        - link "Review" [ref=e30] [cursor=pointer]:
+          - /url: /review
+        - link "Practice" [ref=e31] [cursor=pointer]:
+          - /url: /practice
+        - link "Progress" [ref=e32] [cursor=pointer]:
+          - /url: /progress
+  - main [ref=e33]:
+    - generic [ref=e34]:
+      - generic [ref=e35]:
+        - heading "Review" [level=1] [ref=e36]
+        - paragraph [ref=e37]: Flip through your vocabulary flashcards.
+      - generic [ref=e38]:
+        - button "All (120)" [ref=e39] [cursor=pointer]
+        - button "greetings (6)" [ref=e40] [cursor=pointer]
+        - button "food (8)" [ref=e41] [cursor=pointer]
+        - button "shopping (5)" [ref=e42] [cursor=pointer]
+        - button "travel (8)" [ref=e43] [cursor=pointer]
+        - button "daily (53)" [ref=e44] [cursor=pointer]
+        - button "work (20)" [ref=e45] [cursor=pointer]
+        - button "numbers (10)" [ref=e46] [cursor=pointer]
+        - button "other (10)" [ref=e47] [cursor=pointer]
+      - generic [ref=e48]:
+        - paragraph [ref=e49]: Card 1 of 120
+        - button "不得不 Tap to reveal" [ref=e50] [cursor=pointer]:
+          - paragraph [ref=e51]: 不得不
+          - paragraph [ref=e52]: Tap to reveal
+        - generic [ref=e53]:
+          - button "← Previous" [disabled] [ref=e54]
+          - button "Next →" [ref=e55] [cursor=pointer]
+  - contentinfo [ref=e56]:
+    - paragraph [ref=e57]: Wordkeep — Built for learning Chinese, one word at a time.
+  - alert [ref=e58]

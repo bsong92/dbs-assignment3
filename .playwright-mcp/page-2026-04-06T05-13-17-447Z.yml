@@ -1,0 +1,48 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Wordkeep logo Wordkeep" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Wordkeep logo" [ref=e6]
+        - generic [ref=e7]: Wordkeep
+      - generic [ref=e8]:
+        - link "Dashboard" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Add Word" [ref=e10] [cursor=pointer]:
+          - /url: /add
+        - link "Vocabulary" [ref=e11] [cursor=pointer]:
+          - /url: /vocab
+        - link "Review" [ref=e12] [cursor=pointer]:
+          - /url: /review
+        - link "Practice" [ref=e13] [cursor=pointer]:
+          - /url: /practice
+        - link "Progress" [ref=e14] [cursor=pointer]:
+          - /url: /progress
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - heading "Review" [level=1] [ref=e18]
+        - paragraph [ref=e19]: Flip through your vocabulary flashcards.
+      - generic [ref=e20]:
+        - button "All (120)" [ref=e21] [cursor=pointer]
+        - button "greetings (6)" [ref=e22] [cursor=pointer]
+        - button "food (8)" [ref=e23] [cursor=pointer]
+        - button "shopping (5)" [ref=e24] [cursor=pointer]
+        - button "travel (8)" [ref=e25] [cursor=pointer]
+        - button "daily (53)" [ref=e26] [cursor=pointer]
+        - button "work (20)" [ref=e27] [cursor=pointer]
+        - button "numbers (10)" [ref=e28] [cursor=pointer]
+        - button "other (10)" [ref=e29] [cursor=pointer]
+      - generic [ref=e30]:
+        - paragraph [ref=e31]: Card 1 of 120
+        - button "效率 Tap to reveal" [ref=e32] [cursor=pointer]:
+          - paragraph [ref=e33]: 效率
+          - paragraph [ref=e34]: Tap to reveal
+        - generic [ref=e35]:
+          - button "← Previous" [disabled] [ref=e36]
+          - button "Next →" [ref=e37] [cursor=pointer]
+  - contentinfo [ref=e38]:
+    - paragraph [ref=e39]: Wordkeep — Built for learning Chinese, one word at a time.
+  - button "Open Next.js Dev Tools" [ref=e45] [cursor=pointer]:
+    - img [ref=e46]
+  - alert [ref=e49]

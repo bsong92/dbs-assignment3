@@ -1,0 +1,52 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Wordkeep logo Wordkeep" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Wordkeep logo" [ref=e6]
+        - generic [ref=e7]: Wordkeep
+      - generic [ref=e8]:
+        - link "Dashboard" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Add Word" [ref=e10] [cursor=pointer]:
+          - /url: /add
+        - link "Vocabulary" [ref=e11] [cursor=pointer]:
+          - /url: /vocab
+        - link "Review" [ref=e12] [cursor=pointer]:
+          - /url: /review
+        - link "Practice" [ref=e13] [cursor=pointer]:
+          - /url: /practice
+        - link "Progress" [ref=e14] [cursor=pointer]:
+          - /url: /progress
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - link "← Back to vocabulary" [ref=e17] [cursor=pointer]:
+        - /url: /vocab
+        - generic [ref=e18]: ←
+        - text: Back to vocabulary
+      - generic [ref=e19]:
+        - generic [ref=e20]:
+          - paragraph [ref=e21]: 你好
+          - paragraph [ref=e22]: nǐ hǎo
+        - generic [ref=e23]:
+          - generic [ref=e24]:
+            - paragraph [ref=e25]: Meaning
+            - paragraph [ref=e26]: hello
+          - generic [ref=e27]:
+            - paragraph [ref=e28]: Example
+            - paragraph [ref=e29]: “你好，我叫Brian。”
+          - generic [ref=e30]:
+            - generic [ref=e31]:
+              - paragraph [ref=e32]: Category
+              - text: greetings
+            - generic [ref=e33]:
+              - paragraph [ref=e34]: Status
+              - text: ✓ Mastered
+          - generic [ref=e35]:
+            - button "Unmark Mastered" [ref=e36] [cursor=pointer]
+            - button "Delete" [ref=e37] [cursor=pointer]
+  - contentinfo [ref=e38]:
+    - paragraph [ref=e39]: Wordkeep — Built for learning Chinese, one word at a time.
+  - button "Open Next.js Dev Tools" [ref=e45] [cursor=pointer]:
+    - img [ref=e46]
+  - alert [ref=e49]

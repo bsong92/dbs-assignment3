@@ -1,0 +1,173 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Wordkeep logo Wordkeep" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Wordkeep logo" [ref=e6]
+        - generic [ref=e7]: Wordkeep
+      - generic [ref=e8]:
+        - link "Dashboard" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Add Word" [ref=e10] [cursor=pointer]:
+          - /url: /add
+        - link "Vocabulary" [ref=e11] [cursor=pointer]:
+          - /url: /vocab
+        - link "Review" [ref=e12] [cursor=pointer]:
+          - /url: /review
+        - link "Practice" [ref=e13] [cursor=pointer]:
+          - /url: /practice
+        - link "Progress" [ref=e14] [cursor=pointer]:
+          - /url: /progress
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - heading "Progress" [level=1] [ref=e18]
+        - paragraph [ref=e19]: Track your Chinese learning journey.
+      - generic [ref=e21]:
+        - generic [ref=e22]:
+          - paragraph [ref=e23]: Overall Mastery
+          - paragraph [ref=e24]: 8%
+        - generic [ref=e25]:
+          - paragraph [ref=e26]: 9 mastered
+          - paragraph [ref=e27]: 111 learning
+          - paragraph [ref=e28]: 120 total
+      - generic [ref=e31]:
+        - generic [ref=e32]:
+          - generic [ref=e34]: ✓
+          - paragraph [ref=e35]: "9"
+          - paragraph [ref=e36]: Mastered
+        - generic [ref=e37]:
+          - generic [ref=e39]: ✎
+          - paragraph [ref=e40]: "111"
+          - paragraph [ref=e41]: Still Learning
+      - generic [ref=e42]:
+        - paragraph [ref=e43]: By Category
+        - generic [ref=e44]:
+          - button "▶ daily 0/53 mastered · 0%" [ref=e46] [cursor=pointer]:
+            - generic [ref=e47]:
+              - generic [ref=e48]:
+                - generic [ref=e49]: ▶
+                - generic [ref=e50]: daily
+              - generic [ref=e51]: 0/53 mastered · 0%
+          - button "▶ food 1/8 mastered · 13%" [ref=e54] [cursor=pointer]:
+            - generic [ref=e55]:
+              - generic [ref=e56]:
+                - generic [ref=e57]: ▶
+                - generic [ref=e58]: food
+              - generic [ref=e59]: 1/8 mastered · 13%
+          - button "▶ greetings 5/6 mastered · 83%" [ref=e63] [cursor=pointer]:
+            - generic [ref=e64]:
+              - generic [ref=e65]:
+                - generic [ref=e66]: ▶
+                - generic [ref=e67]: greetings
+              - generic [ref=e68]: 5/6 mastered · 83%
+          - button "▶ numbers 2/10 mastered · 20%" [ref=e72] [cursor=pointer]:
+            - generic [ref=e73]:
+              - generic [ref=e74]:
+                - generic [ref=e75]: ▶
+                - generic [ref=e76]: numbers
+              - generic [ref=e77]: 2/10 mastered · 20%
+          - button "▶ other 0/10 mastered · 0%" [ref=e81] [cursor=pointer]:
+            - generic [ref=e82]:
+              - generic [ref=e83]:
+                - generic [ref=e84]: ▶
+                - generic [ref=e85]: other
+              - generic [ref=e86]: 0/10 mastered · 0%
+          - button "▶ shopping 0/5 mastered · 0%" [ref=e89] [cursor=pointer]:
+            - generic [ref=e90]:
+              - generic [ref=e91]:
+                - generic [ref=e92]: ▶
+                - generic [ref=e93]: shopping
+              - generic [ref=e94]: 0/5 mastered · 0%
+          - button "▶ travel 1/8 mastered · 13%" [ref=e97] [cursor=pointer]:
+            - generic [ref=e98]:
+              - generic [ref=e99]:
+                - generic [ref=e100]: ▶
+                - generic [ref=e101]: travel
+              - generic [ref=e102]: 1/8 mastered · 13%
+          - button "▶ work 0/20 mastered · 0%" [ref=e106] [cursor=pointer]:
+            - generic [ref=e107]:
+              - generic [ref=e108]:
+                - generic [ref=e109]: ▶
+                - generic [ref=e110]: work
+              - generic [ref=e111]: 0/20 mastered · 0%
+      - generic [ref=e113]:
+        - paragraph [ref=e115]: All Mastered Words (9)
+        - generic [ref=e116]:
+          - link "你好 nǐ hǎo hello greetings" [ref=e117] [cursor=pointer]:
+            - /url: /vocab/1
+            - generic [ref=e118]:
+              - generic [ref=e119]: 你好
+              - generic [ref=e120]: nǐ hǎo
+            - generic [ref=e121]:
+              - generic [ref=e122]: hello
+              - generic [ref=e123]: greetings
+          - link "谢谢 xiè xie thank you greetings" [ref=e124] [cursor=pointer]:
+            - /url: /vocab/2
+            - generic [ref=e125]:
+              - generic [ref=e126]: 谢谢
+              - generic [ref=e127]: xiè xie
+            - generic [ref=e128]:
+              - generic [ref=e129]: thank you
+              - generic [ref=e130]: greetings
+          - link "不客气 bú kè qi you're welcome greetings" [ref=e131] [cursor=pointer]:
+            - /url: /vocab/3
+            - generic [ref=e132]:
+              - generic [ref=e133]: 不客气
+              - generic [ref=e134]: bú kè qi
+            - generic [ref=e135]:
+              - generic [ref=e136]: you're welcome
+              - generic [ref=e137]: greetings
+          - link "没关系 méi guān xi it doesn't matter / no problem greetings" [ref=e138] [cursor=pointer]:
+            - /url: /vocab/4
+            - generic [ref=e139]:
+              - generic [ref=e140]: 没关系
+              - generic [ref=e141]: méi guān xi
+            - generic [ref=e142]:
+              - generic [ref=e143]: it doesn't matter / no problem
+              - generic [ref=e144]: greetings
+          - link "再见 zài jiàn goodbye greetings" [ref=e145] [cursor=pointer]:
+            - /url: /vocab/5
+            - generic [ref=e146]:
+              - generic [ref=e147]: 再见
+              - generic [ref=e148]: zài jiàn
+            - generic [ref=e149]:
+              - generic [ref=e150]: goodbye
+              - generic [ref=e151]: greetings
+          - link "水 shuǐ water food" [ref=e152] [cursor=pointer]:
+            - /url: /vocab/6
+            - generic [ref=e153]:
+              - generic [ref=e154]: 水
+              - generic [ref=e155]: shuǐ
+            - generic [ref=e156]:
+              - generic [ref=e157]: water
+              - generic [ref=e158]: food
+          - link "去 qù to go travel" [ref=e159] [cursor=pointer]:
+            - /url: /vocab/19
+            - generic [ref=e160]:
+              - generic [ref=e161]: 去
+              - generic [ref=e162]: qù
+            - generic [ref=e163]:
+              - generic [ref=e164]: to go
+              - generic [ref=e165]: travel
+          - link "百 bǎi hundred numbers" [ref=e166] [cursor=pointer]:
+            - /url: /vocab/101
+            - generic [ref=e167]:
+              - generic [ref=e168]: 百
+              - generic [ref=e169]: bǎi
+            - generic [ref=e170]:
+              - generic [ref=e171]: hundred
+              - generic [ref=e172]: numbers
+          - link "千 qiān thousand numbers" [ref=e173] [cursor=pointer]:
+            - /url: /vocab/102
+            - generic [ref=e174]:
+              - generic [ref=e175]: 千
+              - generic [ref=e176]: qiān
+            - generic [ref=e177]:
+              - generic [ref=e178]: thousand
+              - generic [ref=e179]: numbers
+  - contentinfo [ref=e180]:
+    - paragraph [ref=e181]: Wordkeep — Built for learning Chinese, one word at a time.
+  - button "Open Next.js Dev Tools" [ref=e187] [cursor=pointer]:
+    - img [ref=e188]
+  - alert [ref=e191]

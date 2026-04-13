@@ -1,0 +1,100 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Wordkeep logo Wordkeep" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Wordkeep logo" [ref=e6]
+        - generic [ref=e7]: Wordkeep
+      - generic [ref=e8]:
+        - link "Dashboard" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Add Word" [ref=e10] [cursor=pointer]:
+          - /url: /add
+        - link "Vocabulary" [ref=e11] [cursor=pointer]:
+          - /url: /vocab
+        - link "Review" [ref=e12] [cursor=pointer]:
+          - /url: /review
+        - link "Practice" [ref=e13] [cursor=pointer]:
+          - /url: /practice
+        - link "Progress" [ref=e14] [cursor=pointer]:
+          - /url: /progress
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - heading "Welcome back" [level=1] [ref=e18]
+        - paragraph [ref=e19]: Keep building your Chinese vocabulary, one word at a time.
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - paragraph [ref=e22]: "120"
+          - paragraph [ref=e23]: Total Words
+        - generic [ref=e24]:
+          - paragraph [ref=e25]: "9"
+          - paragraph [ref=e26]: Mastered
+        - generic [ref=e27]:
+          - paragraph [ref=e28]: "120"
+          - paragraph [ref=e29]: Added Today
+        - generic [ref=e30]:
+          - paragraph [ref=e31]: "8"
+          - paragraph [ref=e32]: Categories
+      - generic [ref=e33]:
+        - link "+ Add Word Add a new Chinese word or phrase" [ref=e34] [cursor=pointer]:
+          - /url: /add
+          - generic [ref=e35]: +
+          - generic [ref=e36]:
+            - paragraph [ref=e37]: Add Word
+            - paragraph [ref=e38]: Add a new Chinese word or phrase
+        - link "✦ Start Review Flashcards and quiz practice" [ref=e39] [cursor=pointer]:
+          - /url: /review
+          - generic [ref=e40]: ✦
+          - generic [ref=e41]:
+            - paragraph [ref=e42]: Start Review
+            - paragraph [ref=e43]: Flashcards and quiz practice
+      - generic [ref=e44]:
+        - generic [ref=e45]:
+          - heading "Recent Words" [level=2] [ref=e46]
+          - link "View all →" [ref=e47] [cursor=pointer]:
+            - /url: /vocab
+        - generic [ref=e48]:
+          - link "你好 nǐ hǎo hello greetings" [ref=e49] [cursor=pointer]:
+            - /url: /vocab/1
+            - generic [ref=e50]:
+              - generic [ref=e51]: 你好
+              - generic [ref=e52]:
+                - paragraph [ref=e53]: nǐ hǎo
+                - paragraph [ref=e54]: hello
+            - generic [ref=e55]: greetings
+          - link "谢谢 xiè xie thank you greetings" [ref=e56] [cursor=pointer]:
+            - /url: /vocab/2
+            - generic [ref=e57]:
+              - generic [ref=e58]: 谢谢
+              - generic [ref=e59]:
+                - paragraph [ref=e60]: xiè xie
+                - paragraph [ref=e61]: thank you
+            - generic [ref=e62]: greetings
+          - link "不客气 bú kè qi you're welcome greetings" [ref=e63] [cursor=pointer]:
+            - /url: /vocab/3
+            - generic [ref=e64]:
+              - generic [ref=e65]: 不客气
+              - generic [ref=e66]:
+                - paragraph [ref=e67]: bú kè qi
+                - paragraph [ref=e68]: you're welcome
+            - generic [ref=e69]: greetings
+          - link "没关系 méi guān xi it doesn't matter / no problem greetings" [ref=e70] [cursor=pointer]:
+            - /url: /vocab/4
+            - generic [ref=e71]:
+              - generic [ref=e72]: 没关系
+              - generic [ref=e73]:
+                - paragraph [ref=e74]: méi guān xi
+                - paragraph [ref=e75]: it doesn't matter / no problem
+            - generic [ref=e76]: greetings
+          - link "再见 zài jiàn goodbye greetings" [ref=e77] [cursor=pointer]:
+            - /url: /vocab/5
+            - generic [ref=e78]:
+              - generic [ref=e79]: 再见
+              - generic [ref=e80]:
+                - paragraph [ref=e81]: zài jiàn
+                - paragraph [ref=e82]: goodbye
+            - generic [ref=e83]: greetings
+  - contentinfo [ref=e84]:
+    - paragraph [ref=e85]: Wordkeep — Built for learning Chinese, one word at a time.
+  - alert [ref=e86]

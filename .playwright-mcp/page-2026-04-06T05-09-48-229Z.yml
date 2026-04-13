@@ -1,0 +1,60 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Wordkeep logo Wordkeep" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Wordkeep logo" [ref=e6]
+        - generic [ref=e7]: Wordkeep
+      - generic [ref=e8]:
+        - link "Dashboard" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Add Word" [ref=e10] [cursor=pointer]:
+          - /url: /add
+        - link "Vocabulary" [ref=e11] [cursor=pointer]:
+          - /url: /vocab
+        - link "Review" [ref=e12] [cursor=pointer]:
+          - /url: /review
+        - link "Practice" [ref=e13] [cursor=pointer]:
+          - /url: /practice
+        - link "Progress" [ref=e14] [cursor=pointer]:
+          - /url: /progress
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - heading "Add New Word" [level=1] [ref=e18]
+        - paragraph [ref=e19]: Add a Chinese word or phrase you want to remember.
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - generic [ref=e22]: Chinese Characters *
+          - textbox "Chinese Characters *" [ref=e23]:
+            - /placeholder: e.g. 你好
+        - generic [ref=e24]:
+          - generic [ref=e25]:
+            - generic [ref=e26]: Pinyin *
+            - textbox "Pinyin *" [ref=e27]:
+              - /placeholder: e.g. nǐ hǎo
+          - generic [ref=e28]:
+            - generic [ref=e29]: English Meaning *
+            - textbox "English Meaning *" [ref=e30]:
+              - /placeholder: e.g. hello
+        - generic [ref=e31]:
+          - generic [ref=e32]: Example Sentence (optional)
+          - textbox "Example Sentence (optional)" [ref=e33]:
+            - /placeholder: e.g. 你好，我叫Brian。
+        - generic [ref=e34]:
+          - generic [ref=e35]: Category
+          - combobox "Category" [ref=e36]:
+            - option "Greetings"
+            - option "Food"
+            - option "Travel"
+            - option "Shopping"
+            - option "Numbers"
+            - option "Daily"
+            - option "Work"
+            - option "Other" [selected]
+        - button "Add Word" [ref=e37] [cursor=pointer]
+  - contentinfo [ref=e38]:
+    - paragraph [ref=e39]: Wordkeep — Built for learning Chinese, one word at a time.
+  - button "Open Next.js Dev Tools" [ref=e45] [cursor=pointer]:
+    - img [ref=e46]
+  - alert [ref=e49]

@@ -1,0 +1,1022 @@
+- generic [active] [ref=e1]:
+  - navigation [ref=e2]:
+    - generic [ref=e4]:
+      - link "Wordkeep logo Wordkeep" [ref=e5] [cursor=pointer]:
+        - /url: /
+        - img "Wordkeep logo" [ref=e6]
+        - generic [ref=e7]: Wordkeep
+      - generic [ref=e8]:
+        - link "Dashboard" [ref=e9] [cursor=pointer]:
+          - /url: /
+        - link "Add Word" [ref=e10] [cursor=pointer]:
+          - /url: /add
+        - link "Vocabulary" [ref=e11] [cursor=pointer]:
+          - /url: /vocab
+        - link "Review" [ref=e12] [cursor=pointer]:
+          - /url: /review
+        - link "Practice" [ref=e13] [cursor=pointer]:
+          - /url: /practice
+        - link "Progress" [ref=e14] [cursor=pointer]:
+          - /url: /progress
+  - main [ref=e15]:
+    - generic [ref=e16]:
+      - generic [ref=e17]:
+        - heading "Vocabulary" [level=1] [ref=e18]
+        - paragraph [ref=e19]: 120 words in your journal
+      - generic [ref=e20]:
+        - generic [ref=e21]:
+          - img [ref=e22]
+          - textbox "Search by Chinese, pinyin, or English..." [ref=e24]
+        - generic [ref=e25]:
+          - button "All" [ref=e26] [cursor=pointer]
+          - button "greetings" [ref=e27] [cursor=pointer]
+          - button "food" [ref=e28] [cursor=pointer]
+          - button "travel" [ref=e29] [cursor=pointer]
+          - button "shopping" [ref=e30] [cursor=pointer]
+          - button "numbers" [ref=e31] [cursor=pointer]
+          - button "daily" [ref=e32] [cursor=pointer]
+          - button "work" [ref=e33] [cursor=pointer]
+          - button "other" [ref=e34] [cursor=pointer]
+      - generic [ref=e35]:
+        - link "你好 nǐ hǎo hello greetings ✓ mastered" [ref=e36] [cursor=pointer]:
+          - /url: /vocab/1
+          - generic [ref=e37]:
+            - generic [ref=e38]: 你好
+            - generic [ref=e39]:
+              - paragraph [ref=e40]: nǐ hǎo
+              - paragraph [ref=e41]: hello
+          - generic [ref=e42]:
+            - generic [ref=e43]: greetings
+            - generic [ref=e44]: ✓ mastered
+        - link "谢谢 xiè xie thank you greetings ✓ mastered" [ref=e45] [cursor=pointer]:
+          - /url: /vocab/2
+          - generic [ref=e46]:
+            - generic [ref=e47]: 谢谢
+            - generic [ref=e48]:
+              - paragraph [ref=e49]: xiè xie
+              - paragraph [ref=e50]: thank you
+          - generic [ref=e51]:
+            - generic [ref=e52]: greetings
+            - generic [ref=e53]: ✓ mastered
+        - link "不客气 bú kè qi you're welcome greetings ✓ mastered" [ref=e54] [cursor=pointer]:
+          - /url: /vocab/3
+          - generic [ref=e55]:
+            - generic [ref=e56]: 不客气
+            - generic [ref=e57]:
+              - paragraph [ref=e58]: bú kè qi
+              - paragraph [ref=e59]: you're welcome
+          - generic [ref=e60]:
+            - generic [ref=e61]: greetings
+            - generic [ref=e62]: ✓ mastered
+        - link "没关系 méi guān xi it doesn't matter / no problem greetings ✓ mastered" [ref=e63] [cursor=pointer]:
+          - /url: /vocab/4
+          - generic [ref=e64]:
+            - generic [ref=e65]: 没关系
+            - generic [ref=e66]:
+              - paragraph [ref=e67]: méi guān xi
+              - paragraph [ref=e68]: it doesn't matter / no problem
+          - generic [ref=e69]:
+            - generic [ref=e70]: greetings
+            - generic [ref=e71]: ✓ mastered
+        - link "再见 zài jiàn goodbye greetings ✓ mastered" [ref=e72] [cursor=pointer]:
+          - /url: /vocab/5
+          - generic [ref=e73]:
+            - generic [ref=e74]: 再见
+            - generic [ref=e75]:
+              - paragraph [ref=e76]: zài jiàn
+              - paragraph [ref=e77]: goodbye
+          - generic [ref=e78]:
+            - generic [ref=e79]: greetings
+            - generic [ref=e80]: ✓ mastered
+        - link "水 shuǐ water food ✓ mastered" [ref=e81] [cursor=pointer]:
+          - /url: /vocab/6
+          - generic [ref=e82]:
+            - generic [ref=e83]: 水
+            - generic [ref=e84]:
+              - paragraph [ref=e85]: shuǐ
+              - paragraph [ref=e86]: water
+          - generic [ref=e87]:
+            - generic [ref=e88]: food
+            - generic [ref=e89]: ✓ mastered
+        - link "吃饭 chī fàn to eat (a meal) food" [ref=e90] [cursor=pointer]:
+          - /url: /vocab/7
+          - generic [ref=e91]:
+            - generic [ref=e92]: 吃饭
+            - generic [ref=e93]:
+              - paragraph [ref=e94]: chī fàn
+              - paragraph [ref=e95]: to eat (a meal)
+          - generic [ref=e97]: food
+        - link "好吃 hǎo chī delicious food" [ref=e98] [cursor=pointer]:
+          - /url: /vocab/8
+          - generic [ref=e99]:
+            - generic [ref=e100]: 好吃
+            - generic [ref=e101]:
+              - paragraph [ref=e102]: hǎo chī
+              - paragraph [ref=e103]: delicious
+          - generic [ref=e105]: food
+        - link "点菜 diǎn cài to order food food" [ref=e106] [cursor=pointer]:
+          - /url: /vocab/9
+          - generic [ref=e107]:
+            - generic [ref=e108]: 点菜
+            - generic [ref=e109]:
+              - paragraph [ref=e110]: diǎn cài
+              - paragraph [ref=e111]: to order food
+          - generic [ref=e113]: food
+        - link "饺子 jiǎo zi dumplings food" [ref=e114] [cursor=pointer]:
+          - /url: /vocab/10
+          - generic [ref=e115]:
+            - generic [ref=e116]: 饺子
+            - generic [ref=e117]:
+              - paragraph [ref=e118]: jiǎo zi
+              - paragraph [ref=e119]: dumplings
+          - generic [ref=e121]: food
+        - link "味道 wèi dào taste / flavor food" [ref=e122] [cursor=pointer]:
+          - /url: /vocab/11
+          - generic [ref=e123]:
+            - generic [ref=e124]: 味道
+            - generic [ref=e125]:
+              - paragraph [ref=e126]: wèi dào
+              - paragraph [ref=e127]: taste / flavor
+          - generic [ref=e129]: food
+        - link "营养 yíng yǎng nutrition food" [ref=e130] [cursor=pointer]:
+          - /url: /vocab/12
+          - generic [ref=e131]:
+            - generic [ref=e132]: 营养
+            - generic [ref=e133]:
+              - paragraph [ref=e134]: yíng yǎng
+              - paragraph [ref=e135]: nutrition
+          - generic [ref=e137]: food
+        - link "食物 shí wù food food" [ref=e138] [cursor=pointer]:
+          - /url: /vocab/13
+          - generic [ref=e139]:
+            - generic [ref=e140]: 食物
+            - generic [ref=e141]:
+              - paragraph [ref=e142]: shí wù
+              - paragraph [ref=e143]: food
+          - generic [ref=e145]: food
+        - link "多少钱 duō shao qián how much (money)? shopping" [ref=e146] [cursor=pointer]:
+          - /url: /vocab/14
+          - generic [ref=e147]:
+            - generic [ref=e148]: 多少钱
+            - generic [ref=e149]:
+              - paragraph [ref=e150]: duō shao qián
+              - paragraph [ref=e151]: how much (money)?
+          - generic [ref=e153]: shopping
+        - link "太贵了 tài guì le too expensive shopping" [ref=e154] [cursor=pointer]:
+          - /url: /vocab/15
+          - generic [ref=e155]:
+            - generic [ref=e156]: 太贵了
+            - generic [ref=e157]:
+              - paragraph [ref=e158]: tài guì le
+              - paragraph [ref=e159]: too expensive
+          - generic [ref=e161]: shopping
+        - link "便宜 pián yi cheap / inexpensive shopping" [ref=e162] [cursor=pointer]:
+          - /url: /vocab/16
+          - generic [ref=e163]:
+            - generic [ref=e164]: 便宜
+            - generic [ref=e165]:
+              - paragraph [ref=e166]: pián yi
+              - paragraph [ref=e167]: cheap / inexpensive
+          - generic [ref=e169]: shopping
+        - link "打折 dǎ zhé discount / on sale shopping" [ref=e170] [cursor=pointer]:
+          - /url: /vocab/17
+          - generic [ref=e171]:
+            - generic [ref=e172]: 打折
+            - generic [ref=e173]:
+              - paragraph [ref=e174]: dǎ zhé
+              - paragraph [ref=e175]: discount / on sale
+          - generic [ref=e177]: shopping
+        - link "消费 xiāo fèi to consume / consumption shopping" [ref=e178] [cursor=pointer]:
+          - /url: /vocab/18
+          - generic [ref=e179]:
+            - generic [ref=e180]: 消费
+            - generic [ref=e181]:
+              - paragraph [ref=e182]: xiāo fèi
+              - paragraph [ref=e183]: to consume / consumption
+          - generic [ref=e185]: shopping
+        - link "去 qù to go travel ✓ mastered" [ref=e186] [cursor=pointer]:
+          - /url: /vocab/19
+          - generic [ref=e187]:
+            - generic [ref=e188]: 去
+            - generic [ref=e189]:
+              - paragraph [ref=e190]: qù
+              - paragraph [ref=e191]: to go
+          - generic [ref=e192]:
+            - generic [ref=e193]: travel
+            - generic [ref=e194]: ✓ mastered
+        - link "地铁站 dì tiě zhàn subway station travel" [ref=e195] [cursor=pointer]:
+          - /url: /vocab/20
+          - generic [ref=e196]:
+            - generic [ref=e197]: 地铁站
+            - generic [ref=e198]:
+              - paragraph [ref=e199]: dì tiě zhàn
+              - paragraph [ref=e200]: subway station
+          - generic [ref=e202]: travel
+        - link "迷路了 mí lù le to be lost travel" [ref=e203] [cursor=pointer]:
+          - /url: /vocab/21
+          - generic [ref=e204]:
+            - generic [ref=e205]: 迷路了
+            - generic [ref=e206]:
+              - paragraph [ref=e207]: mí lù le
+              - paragraph [ref=e208]: to be lost
+          - generic [ref=e210]: travel
+        - link "签证 qiān zhèng visa travel" [ref=e211] [cursor=pointer]:
+          - /url: /vocab/22
+          - generic [ref=e212]:
+            - generic [ref=e213]: 签证
+            - generic [ref=e214]:
+              - paragraph [ref=e215]: qiān zhèng
+              - paragraph [ref=e216]: visa
+          - generic [ref=e218]: travel
+        - link "航班 háng bān flight travel" [ref=e219] [cursor=pointer]:
+          - /url: /vocab/23
+          - generic [ref=e220]:
+            - generic [ref=e221]: 航班
+            - generic [ref=e222]:
+              - paragraph [ref=e223]: háng bān
+              - paragraph [ref=e224]: flight
+          - generic [ref=e226]: travel
+        - link "行李 xíng li luggage / baggage travel" [ref=e227] [cursor=pointer]:
+          - /url: /vocab/24
+          - generic [ref=e228]:
+            - generic [ref=e229]: 行李
+            - generic [ref=e230]:
+              - paragraph [ref=e231]: xíng li
+              - paragraph [ref=e232]: luggage / baggage
+          - generic [ref=e234]: travel
+        - link "目的地 mù dì dì destination travel" [ref=e235] [cursor=pointer]:
+          - /url: /vocab/25
+          - generic [ref=e236]:
+            - generic [ref=e237]: 目的地
+            - generic [ref=e238]:
+              - paragraph [ref=e239]: mù dì dì
+              - paragraph [ref=e240]: destination
+          - generic [ref=e242]: travel
+        - link "上班 shàng bān to go to work daily" [ref=e243] [cursor=pointer]:
+          - /url: /vocab/26
+          - generic [ref=e244]:
+            - generic [ref=e245]: 上班
+            - generic [ref=e246]:
+              - paragraph [ref=e247]: shàng bān
+              - paragraph [ref=e248]: to go to work
+          - generic [ref=e250]: daily
+        - link "休息 xiū xi to rest / take a break daily" [ref=e251] [cursor=pointer]:
+          - /url: /vocab/27
+          - generic [ref=e252]:
+            - generic [ref=e253]: 休息
+            - generic [ref=e254]:
+              - paragraph [ref=e255]: xiū xi
+              - paragraph [ref=e256]: to rest / take a break
+          - generic [ref=e258]: daily
+        - link "已经 yǐ jīng already daily" [ref=e259] [cursor=pointer]:
+          - /url: /vocab/28
+          - generic [ref=e260]:
+            - generic [ref=e261]: 已经
+            - generic [ref=e262]:
+              - paragraph [ref=e263]: yǐ jīng
+              - paragraph [ref=e264]: already
+          - generic [ref=e266]: daily
+        - link "应该 yīng gāi should / ought to daily" [ref=e267] [cursor=pointer]:
+          - /url: /vocab/29
+          - generic [ref=e268]:
+            - generic [ref=e269]: 应该
+            - generic [ref=e270]:
+              - paragraph [ref=e271]: yīng gāi
+              - paragraph [ref=e272]: should / ought to
+          - generic [ref=e274]: daily
+        - link "听不懂 tīng bù dǒng can't understand (listening) daily" [ref=e275] [cursor=pointer]:
+          - /url: /vocab/30
+          - generic [ref=e276]:
+            - generic [ref=e277]: 听不懂
+            - generic [ref=e278]:
+              - paragraph [ref=e279]: tīng bù dǒng
+              - paragraph [ref=e280]: can't understand (listening)
+          - generic [ref=e282]: daily
+        - link "越来越 yuè lái yuè more and more daily" [ref=e283] [cursor=pointer]:
+          - /url: /vocab/31
+          - generic [ref=e284]:
+            - generic [ref=e285]: 越来越
+            - generic [ref=e286]:
+              - paragraph [ref=e287]: yuè lái yuè
+              - paragraph [ref=e288]: more and more
+          - generic [ref=e290]: daily
+        - link "习惯 xí guàn habit / to be used to daily" [ref=e291] [cursor=pointer]:
+          - /url: /vocab/32
+          - generic [ref=e292]:
+            - generic [ref=e293]: 习惯
+            - generic [ref=e294]:
+              - paragraph [ref=e295]: xí guàn
+              - paragraph [ref=e296]: habit / to be used to
+          - generic [ref=e298]: daily
+        - link "安排 ān pái to arrange / arrangement daily" [ref=e299] [cursor=pointer]:
+          - /url: /vocab/33
+          - generic [ref=e300]:
+            - generic [ref=e301]: 安排
+            - generic [ref=e302]:
+              - paragraph [ref=e303]: ān pái
+              - paragraph [ref=e304]: to arrange / arrangement
+          - generic [ref=e306]: daily
+        - link "经验 jīng yàn experience work" [ref=e307] [cursor=pointer]:
+          - /url: /vocab/34
+          - generic [ref=e308]:
+            - generic [ref=e309]: 经验
+            - generic [ref=e310]:
+              - paragraph [ref=e311]: jīng yàn
+              - paragraph [ref=e312]: experience
+          - generic [ref=e314]: work
+        - link "压力 yā lì pressure / stress work" [ref=e315] [cursor=pointer]:
+          - /url: /vocab/35
+          - generic [ref=e316]:
+            - generic [ref=e317]: 压力
+            - generic [ref=e318]:
+              - paragraph [ref=e319]: yā lì
+              - paragraph [ref=e320]: pressure / stress
+          - generic [ref=e322]: work
+        - link "竞争 jìng zhēng competition work" [ref=e323] [cursor=pointer]:
+          - /url: /vocab/36
+          - generic [ref=e324]:
+            - generic [ref=e325]: 竞争
+            - generic [ref=e326]:
+              - paragraph [ref=e327]: jìng zhēng
+              - paragraph [ref=e328]: competition
+          - generic [ref=e330]: work
+        - link "效率 xiào lǜ efficiency work" [ref=e331] [cursor=pointer]:
+          - /url: /vocab/37
+          - generic [ref=e332]:
+            - generic [ref=e333]: 效率
+            - generic [ref=e334]:
+              - paragraph [ref=e335]: xiào lǜ
+              - paragraph [ref=e336]: efficiency
+          - generic [ref=e338]: work
+        - link "任务 rèn wù task / mission work" [ref=e339] [cursor=pointer]:
+          - /url: /vocab/38
+          - generic [ref=e340]:
+            - generic [ref=e341]: 任务
+            - generic [ref=e342]:
+              - paragraph [ref=e343]: rèn wù
+              - paragraph [ref=e344]: task / mission
+          - generic [ref=e346]: work
+        - link "会议 huì yì meeting / conference work" [ref=e347] [cursor=pointer]:
+          - /url: /vocab/39
+          - generic [ref=e348]:
+            - generic [ref=e349]: 会议
+            - generic [ref=e350]:
+              - paragraph [ref=e351]: huì yì
+              - paragraph [ref=e352]: meeting / conference
+          - generic [ref=e354]: work
+        - link "辞职 cí zhí to resign work" [ref=e355] [cursor=pointer]:
+          - /url: /vocab/40
+          - generic [ref=e356]:
+            - generic [ref=e357]: 辞职
+            - generic [ref=e358]:
+              - paragraph [ref=e359]: cí zhí
+              - paragraph [ref=e360]: to resign
+          - generic [ref=e362]: work
+        - link "加班 jiā bān to work overtime work" [ref=e363] [cursor=pointer]:
+          - /url: /vocab/41
+          - generic [ref=e364]:
+            - generic [ref=e365]: 加班
+            - generic [ref=e366]:
+              - paragraph [ref=e367]: jiā bān
+              - paragraph [ref=e368]: to work overtime
+          - generic [ref=e370]: work
+        - link "专业 zhuān yè major / professional work" [ref=e371] [cursor=pointer]:
+          - /url: /vocab/42
+          - generic [ref=e372]:
+            - generic [ref=e373]: 专业
+            - generic [ref=e374]:
+              - paragraph [ref=e375]: zhuān yè
+              - paragraph [ref=e376]: major / professional
+          - generic [ref=e378]: work
+        - link "紧张 jǐn zhāng nervous / tense daily" [ref=e379] [cursor=pointer]:
+          - /url: /vocab/43
+          - generic [ref=e380]:
+            - generic [ref=e381]: 紧张
+            - generic [ref=e382]:
+              - paragraph [ref=e383]: jǐn zhāng
+              - paragraph [ref=e384]: nervous / tense
+          - generic [ref=e386]: daily
+        - link "失望 shī wàng disappointed daily" [ref=e387] [cursor=pointer]:
+          - /url: /vocab/44
+          - generic [ref=e388]:
+            - generic [ref=e389]: 失望
+            - generic [ref=e390]:
+              - paragraph [ref=e391]: shī wàng
+              - paragraph [ref=e392]: disappointed
+          - generic [ref=e394]: daily
+        - link "自信 zì xìn self-confident daily" [ref=e395] [cursor=pointer]:
+          - /url: /vocab/45
+          - generic [ref=e396]:
+            - generic [ref=e397]: 自信
+            - generic [ref=e398]:
+              - paragraph [ref=e399]: zì xìn
+              - paragraph [ref=e400]: self-confident
+          - generic [ref=e402]: daily
+        - link "后悔 hòu huǐ to regret daily" [ref=e403] [cursor=pointer]:
+          - /url: /vocab/46
+          - generic [ref=e404]:
+            - generic [ref=e405]: 后悔
+            - generic [ref=e406]:
+              - paragraph [ref=e407]: hòu huǐ
+              - paragraph [ref=e408]: to regret
+          - generic [ref=e410]: daily
+        - link "羡慕 xiàn mù to envy / to admire daily" [ref=e411] [cursor=pointer]:
+          - /url: /vocab/47
+          - generic [ref=e412]:
+            - generic [ref=e413]: 羡慕
+            - generic [ref=e414]:
+              - paragraph [ref=e415]: xiàn mù
+              - paragraph [ref=e416]: to envy / to admire
+          - generic [ref=e418]: daily
+        - link "佩服 pèi fú to admire / to respect daily" [ref=e419] [cursor=pointer]:
+          - /url: /vocab/48
+          - generic [ref=e420]:
+            - generic [ref=e421]: 佩服
+            - generic [ref=e422]:
+              - paragraph [ref=e423]: pèi fú
+              - paragraph [ref=e424]: to admire / to respect
+          - generic [ref=e426]: daily
+        - link "耐心 nài xīn patience / patient daily" [ref=e427] [cursor=pointer]:
+          - /url: /vocab/49
+          - generic [ref=e428]:
+            - generic [ref=e429]: 耐心
+            - generic [ref=e430]:
+              - paragraph [ref=e431]: nài xīn
+              - paragraph [ref=e432]: patience / patient
+          - generic [ref=e434]: daily
+        - link "知识 zhī shi knowledge work" [ref=e435] [cursor=pointer]:
+          - /url: /vocab/50
+          - generic [ref=e436]:
+            - generic [ref=e437]: 知识
+            - generic [ref=e438]:
+              - paragraph [ref=e439]: zhī shi
+              - paragraph [ref=e440]: knowledge
+          - generic [ref=e442]: work
+        - link "翻译 fān yì to translate / translation work" [ref=e443] [cursor=pointer]:
+          - /url: /vocab/51
+          - generic [ref=e444]:
+            - generic [ref=e445]: 翻译
+            - generic [ref=e446]:
+              - paragraph [ref=e447]: fān yì
+              - paragraph [ref=e448]: to translate / translation
+          - generic [ref=e450]: work
+        - link "复习 fù xí to review / revision work" [ref=e451] [cursor=pointer]:
+          - /url: /vocab/52
+          - generic [ref=e452]:
+            - generic [ref=e453]: 复习
+            - generic [ref=e454]:
+              - paragraph [ref=e455]: fù xí
+              - paragraph [ref=e456]: to review / revision
+          - generic [ref=e458]: work
+        - link "发音 fā yīn pronunciation work" [ref=e459] [cursor=pointer]:
+          - /url: /vocab/53
+          - generic [ref=e460]:
+            - generic [ref=e461]: 发音
+            - generic [ref=e462]:
+              - paragraph [ref=e463]: fā yīn
+              - paragraph [ref=e464]: pronunciation
+          - generic [ref=e466]: work
+        - link "词汇 cí huì vocabulary work" [ref=e467] [cursor=pointer]:
+          - /url: /vocab/54
+          - generic [ref=e468]:
+            - generic [ref=e469]: 词汇
+            - generic [ref=e470]:
+              - paragraph [ref=e471]: cí huì
+              - paragraph [ref=e472]: vocabulary
+          - generic [ref=e474]: work
+        - link "理解 lǐ jiě to understand / comprehend work" [ref=e475] [cursor=pointer]:
+          - /url: /vocab/55
+          - generic [ref=e476]:
+            - generic [ref=e477]: 理解
+            - generic [ref=e478]:
+              - paragraph [ref=e479]: lǐ jiě
+              - paragraph [ref=e480]: to understand / comprehend
+          - generic [ref=e482]: work
+        - link "网络 wǎng luò internet / network daily" [ref=e483] [cursor=pointer]:
+          - /url: /vocab/56
+          - generic [ref=e484]:
+            - generic [ref=e485]: 网络
+            - generic [ref=e486]:
+              - paragraph [ref=e487]: wǎng luò
+              - paragraph [ref=e488]: internet / network
+          - generic [ref=e490]: daily
+        - link "软件 ruǎn jiàn software daily" [ref=e491] [cursor=pointer]:
+          - /url: /vocab/57
+          - generic [ref=e492]:
+            - generic [ref=e493]: 软件
+            - generic [ref=e494]:
+              - paragraph [ref=e495]: ruǎn jiàn
+              - paragraph [ref=e496]: software
+          - generic [ref=e498]: daily
+        - link "数据 shù jù data work" [ref=e499] [cursor=pointer]:
+          - /url: /vocab/58
+          - generic [ref=e500]:
+            - generic [ref=e501]: 数据
+            - generic [ref=e502]:
+              - paragraph [ref=e503]: shù jù
+              - paragraph [ref=e504]: data
+          - generic [ref=e506]: work
+        - link "人工智能 rén gōng zhì néng artificial intelligence work" [ref=e507] [cursor=pointer]:
+          - /url: /vocab/59
+          - generic [ref=e508]:
+            - generic [ref=e509]: 人工智能
+            - generic [ref=e510]:
+              - paragraph [ref=e511]: rén gōng zhì néng
+              - paragraph [ref=e512]: artificial intelligence
+          - generic [ref=e514]: work
+        - link "下载 xià zài to download daily" [ref=e515] [cursor=pointer]:
+          - /url: /vocab/60
+          - generic [ref=e516]:
+            - generic [ref=e517]: 下载
+            - generic [ref=e518]:
+              - paragraph [ref=e519]: xià zài
+              - paragraph [ref=e520]: to download
+          - generic [ref=e522]: daily
+        - link "锻炼 duàn liàn to exercise / work out daily" [ref=e523] [cursor=pointer]:
+          - /url: /vocab/61
+          - generic [ref=e524]:
+            - generic [ref=e525]: 锻炼
+            - generic [ref=e526]:
+              - paragraph [ref=e527]: duàn liàn
+              - paragraph [ref=e528]: to exercise / work out
+          - generic [ref=e530]: daily
+        - link "健康 jiàn kāng health / healthy daily" [ref=e531] [cursor=pointer]:
+          - /url: /vocab/62
+          - generic [ref=e532]:
+            - generic [ref=e533]: 健康
+            - generic [ref=e534]:
+              - paragraph [ref=e535]: jiàn kāng
+              - paragraph [ref=e536]: health / healthy
+          - generic [ref=e538]: daily
+        - link "感冒 gǎn mào cold (illness) daily" [ref=e539] [cursor=pointer]:
+          - /url: /vocab/63
+          - generic [ref=e540]:
+            - generic [ref=e541]: 感冒
+            - generic [ref=e542]:
+              - paragraph [ref=e543]: gǎn mào
+              - paragraph [ref=e544]: cold (illness)
+          - generic [ref=e546]: daily
+        - link "治疗 zhì liáo to treat (medically) daily" [ref=e547] [cursor=pointer]:
+          - /url: /vocab/64
+          - generic [ref=e548]:
+            - generic [ref=e549]: 治疗
+            - generic [ref=e550]:
+              - paragraph [ref=e551]: zhì liáo
+              - paragraph [ref=e552]: to treat (medically)
+          - generic [ref=e554]: daily
+        - link "观念 guān niàn concept / idea / notion daily" [ref=e555] [cursor=pointer]:
+          - /url: /vocab/65
+          - generic [ref=e556]:
+            - generic [ref=e557]: 观念
+            - generic [ref=e558]:
+              - paragraph [ref=e559]: guān niàn
+              - paragraph [ref=e560]: concept / idea / notion
+          - generic [ref=e562]: daily
+        - link "现象 xiàn xiàng phenomenon daily" [ref=e563] [cursor=pointer]:
+          - /url: /vocab/66
+          - generic [ref=e564]:
+            - generic [ref=e565]: 现象
+            - generic [ref=e566]:
+              - paragraph [ref=e567]: xiàn xiàng
+              - paragraph [ref=e568]: phenomenon
+          - generic [ref=e570]: daily
+        - link "趋势 qū shì trend / tendency work" [ref=e571] [cursor=pointer]:
+          - /url: /vocab/67
+          - generic [ref=e572]:
+            - generic [ref=e573]: 趋势
+            - generic [ref=e574]:
+              - paragraph [ref=e575]: qū shì
+              - paragraph [ref=e576]: trend / tendency
+          - generic [ref=e578]: work
+        - link "影响 yǐng xiǎng to influence / influence daily" [ref=e579] [cursor=pointer]:
+          - /url: /vocab/68
+          - generic [ref=e580]:
+            - generic [ref=e581]: 影响
+            - generic [ref=e582]:
+              - paragraph [ref=e583]: yǐng xiǎng
+              - paragraph [ref=e584]: to influence / influence
+          - generic [ref=e586]: daily
+        - link "本质 běn zhì essence / nature daily" [ref=e587] [cursor=pointer]:
+          - /url: /vocab/69
+          - generic [ref=e588]:
+            - generic [ref=e589]: 本质
+            - generic [ref=e590]:
+              - paragraph [ref=e591]: běn zhì
+              - paragraph [ref=e592]: essence / nature
+          - generic [ref=e594]: daily
+        - link "矛盾 máo dùn contradiction / conflict daily" [ref=e595] [cursor=pointer]:
+          - /url: /vocab/70
+          - generic [ref=e596]:
+            - generic [ref=e597]: 矛盾
+            - generic [ref=e598]:
+              - paragraph [ref=e599]: máo dùn
+              - paragraph [ref=e600]: contradiction / conflict
+          - generic [ref=e602]: daily
+        - link "实际 shí jì actual / practical daily" [ref=e603] [cursor=pointer]:
+          - /url: /vocab/71
+          - generic [ref=e604]:
+            - generic [ref=e605]: 实际
+            - generic [ref=e606]:
+              - paragraph [ref=e607]: shí jì
+              - paragraph [ref=e608]: actual / practical
+          - generic [ref=e610]: daily
+        - link "角度 jiǎo dù angle / perspective daily" [ref=e611] [cursor=pointer]:
+          - /url: /vocab/72
+          - generic [ref=e612]:
+            - generic [ref=e613]: 角度
+            - generic [ref=e614]:
+              - paragraph [ref=e615]: jiǎo dù
+              - paragraph [ref=e616]: angle / perspective
+          - generic [ref=e618]: daily
+        - link "过程 guò chéng process / course daily" [ref=e619] [cursor=pointer]:
+          - /url: /vocab/73
+          - generic [ref=e620]:
+            - generic [ref=e621]: 过程
+            - generic [ref=e622]:
+              - paragraph [ref=e623]: guò chéng
+              - paragraph [ref=e624]: process / course
+          - generic [ref=e626]: daily
+        - link "原则 yuán zé principle daily" [ref=e627] [cursor=pointer]:
+          - /url: /vocab/74
+          - generic [ref=e628]:
+            - generic [ref=e629]: 原则
+            - generic [ref=e630]:
+              - paragraph [ref=e631]: yuán zé
+              - paragraph [ref=e632]: principle
+          - generic [ref=e634]: daily
+        - link "发挥 fā huī to bring into play / perform daily" [ref=e635] [cursor=pointer]:
+          - /url: /vocab/75
+          - generic [ref=e636]:
+            - generic [ref=e637]: 发挥
+            - generic [ref=e638]:
+              - paragraph [ref=e639]: fā huī
+              - paragraph [ref=e640]: to bring into play / perform
+          - generic [ref=e642]: daily
+        - link "沟通 gōu tōng to communicate daily" [ref=e643] [cursor=pointer]:
+          - /url: /vocab/76
+          - generic [ref=e644]:
+            - generic [ref=e645]: 沟通
+            - generic [ref=e646]:
+              - paragraph [ref=e647]: gōu tōng
+              - paragraph [ref=e648]: to communicate
+          - generic [ref=e650]: daily
+        - link "尊重 zūn zhòng to respect / respect daily" [ref=e651] [cursor=pointer]:
+          - /url: /vocab/77
+          - generic [ref=e652]:
+            - generic [ref=e653]: 尊重
+            - generic [ref=e654]:
+              - paragraph [ref=e655]: zūn zhòng
+              - paragraph [ref=e656]: to respect / respect
+          - generic [ref=e658]: daily
+        - link "信任 xìn rèn to trust / trust daily" [ref=e659] [cursor=pointer]:
+          - /url: /vocab/78
+          - generic [ref=e660]:
+            - generic [ref=e661]: 信任
+            - generic [ref=e662]:
+              - paragraph [ref=e663]: xìn rèn
+              - paragraph [ref=e664]: to trust / trust
+          - generic [ref=e666]: daily
+        - link "误会 wù huì misunderstanding daily" [ref=e667] [cursor=pointer]:
+          - /url: /vocab/79
+          - generic [ref=e668]:
+            - generic [ref=e669]: 误会
+            - generic [ref=e670]:
+              - paragraph [ref=e671]: wù huì
+              - paragraph [ref=e672]: misunderstanding
+          - generic [ref=e674]: daily
+        - link "道歉 dào qiàn to apologize greetings" [ref=e675] [cursor=pointer]:
+          - /url: /vocab/80
+          - generic [ref=e676]:
+            - generic [ref=e677]: 道歉
+            - generic [ref=e678]:
+              - paragraph [ref=e679]: dào qiàn
+              - paragraph [ref=e680]: to apologize
+          - generic [ref=e682]: greetings
+        - link "拒绝 jù jué to refuse / reject daily" [ref=e683] [cursor=pointer]:
+          - /url: /vocab/81
+          - generic [ref=e684]:
+            - generic [ref=e685]: 拒绝
+            - generic [ref=e686]:
+              - paragraph [ref=e687]: jù jué
+              - paragraph [ref=e688]: to refuse / reject
+          - generic [ref=e690]: daily
+        - link "环境 huán jìng environment daily" [ref=e691] [cursor=pointer]:
+          - /url: /vocab/82
+          - generic [ref=e692]:
+            - generic [ref=e693]: 环境
+            - generic [ref=e694]:
+              - paragraph [ref=e695]: huán jìng
+              - paragraph [ref=e696]: environment
+          - generic [ref=e698]: daily
+        - link "污染 wū rǎn pollution daily" [ref=e699] [cursor=pointer]:
+          - /url: /vocab/83
+          - generic [ref=e700]:
+            - generic [ref=e701]: 污染
+            - generic [ref=e702]:
+              - paragraph [ref=e703]: wū rǎn
+              - paragraph [ref=e704]: pollution
+          - generic [ref=e706]: daily
+        - link "资源 zī yuán resources daily" [ref=e707] [cursor=pointer]:
+          - /url: /vocab/84
+          - generic [ref=e708]:
+            - generic [ref=e709]: 资源
+            - generic [ref=e710]:
+              - paragraph [ref=e711]: zī yuán
+              - paragraph [ref=e712]: resources
+          - generic [ref=e714]: daily
+        - link "气候 qì hòu climate travel" [ref=e715] [cursor=pointer]:
+          - /url: /vocab/85
+          - generic [ref=e716]:
+            - generic [ref=e717]: 气候
+            - generic [ref=e718]:
+              - paragraph [ref=e719]: qì hòu
+              - paragraph [ref=e720]: climate
+          - generic [ref=e722]: travel
+        - link "无论如何 wú lùn rú hé no matter what / regardless daily" [ref=e723] [cursor=pointer]:
+          - /url: /vocab/86
+          - generic [ref=e724]:
+            - generic [ref=e725]: 无论如何
+            - generic [ref=e726]:
+              - paragraph [ref=e727]: wú lùn rú hé
+              - paragraph [ref=e728]: no matter what / regardless
+          - generic [ref=e730]: daily
+        - link "尽管 jǐn guǎn despite / even though daily" [ref=e731] [cursor=pointer]:
+          - /url: /vocab/87
+          - generic [ref=e732]:
+            - generic [ref=e733]: 尽管
+            - generic [ref=e734]:
+              - paragraph [ref=e735]: jǐn guǎn
+              - paragraph [ref=e736]: despite / even though
+          - generic [ref=e738]: daily
+        - link "反而 fǎn ér on the contrary / instead daily" [ref=e739] [cursor=pointer]:
+          - /url: /vocab/88
+          - generic [ref=e740]:
+            - generic [ref=e741]: 反而
+            - generic [ref=e742]:
+              - paragraph [ref=e743]: fǎn ér
+              - paragraph [ref=e744]: on the contrary / instead
+          - generic [ref=e746]: daily
+        - link "既然 jì rán since / now that daily" [ref=e747] [cursor=pointer]:
+          - /url: /vocab/89
+          - generic [ref=e748]:
+            - generic [ref=e749]: 既然
+            - generic [ref=e750]:
+              - paragraph [ref=e751]: jì rán
+              - paragraph [ref=e752]: since / now that
+          - generic [ref=e754]: daily
+        - link "不得不 bù dé bù have no choice but to daily" [ref=e755] [cursor=pointer]:
+          - /url: /vocab/90
+          - generic [ref=e756]:
+            - generic [ref=e757]: 不得不
+            - generic [ref=e758]:
+              - paragraph [ref=e759]: bù dé bù
+              - paragraph [ref=e760]: have no choice but to
+          - generic [ref=e762]: daily
+        - link "难免 nán miǎn hard to avoid / inevitable daily" [ref=e763] [cursor=pointer]:
+          - /url: /vocab/91
+          - generic [ref=e764]:
+            - generic [ref=e765]: 难免
+            - generic [ref=e766]:
+              - paragraph [ref=e767]: nán miǎn
+              - paragraph [ref=e768]: hard to avoid / inevitable
+          - generic [ref=e770]: daily
+        - link "逐渐 zhú jiàn gradually daily" [ref=e771] [cursor=pointer]:
+          - /url: /vocab/92
+          - generic [ref=e772]:
+            - generic [ref=e773]: 逐渐
+            - generic [ref=e774]:
+              - paragraph [ref=e775]: zhú jiàn
+              - paragraph [ref=e776]: gradually
+          - generic [ref=e778]: daily
+        - link "恰好 qià hǎo just right / by coincidence daily" [ref=e779] [cursor=pointer]:
+          - /url: /vocab/93
+          - generic [ref=e780]:
+            - generic [ref=e781]: 恰好
+            - generic [ref=e782]:
+              - paragraph [ref=e783]: qià hǎo
+              - paragraph [ref=e784]: just right / by coincidence
+          - generic [ref=e786]: daily
+        - link "显然 xiǎn rán obviously / clearly daily" [ref=e787] [cursor=pointer]:
+          - /url: /vocab/94
+          - generic [ref=e788]:
+            - generic [ref=e789]: 显然
+            - generic [ref=e790]:
+              - paragraph [ref=e791]: xiǎn rán
+              - paragraph [ref=e792]: obviously / clearly
+          - generic [ref=e794]: daily
+        - link "未必 wèi bì not necessarily daily" [ref=e795] [cursor=pointer]:
+          - /url: /vocab/95
+          - generic [ref=e796]:
+            - generic [ref=e797]: 未必
+            - generic [ref=e798]:
+              - paragraph [ref=e799]: wèi bì
+              - paragraph [ref=e800]: not necessarily
+          - generic [ref=e802]: daily
+        - link "传统 chuán tǒng tradition / traditional daily" [ref=e803] [cursor=pointer]:
+          - /url: /vocab/96
+          - generic [ref=e804]:
+            - generic [ref=e805]: 传统
+            - generic [ref=e806]:
+              - paragraph [ref=e807]: chuán tǒng
+              - paragraph [ref=e808]: tradition / traditional
+          - generic [ref=e810]: daily
+        - link "文化 wén huà culture daily" [ref=e811] [cursor=pointer]:
+          - /url: /vocab/97
+          - generic [ref=e812]:
+            - generic [ref=e813]: 文化
+            - generic [ref=e814]:
+              - paragraph [ref=e815]: wén huà
+              - paragraph [ref=e816]: culture
+          - generic [ref=e818]: daily
+        - link "价值 jià zhí value / worth daily" [ref=e819] [cursor=pointer]:
+          - /url: /vocab/98
+          - generic [ref=e820]:
+            - generic [ref=e821]: 价值
+            - generic [ref=e822]:
+              - paragraph [ref=e823]: jià zhí
+              - paragraph [ref=e824]: value / worth
+          - generic [ref=e826]: daily
+        - link "贡献 gòng xiàn contribution / to contribute work" [ref=e827] [cursor=pointer]:
+          - /url: /vocab/99
+          - generic [ref=e828]:
+            - generic [ref=e829]: 贡献
+            - generic [ref=e830]:
+              - paragraph [ref=e831]: gòng xiàn
+              - paragraph [ref=e832]: contribution / to contribute
+          - generic [ref=e834]: work
+        - link "挑战 tiǎo zhàn challenge work" [ref=e835] [cursor=pointer]:
+          - /url: /vocab/100
+          - generic [ref=e836]:
+            - generic [ref=e837]: 挑战
+            - generic [ref=e838]:
+              - paragraph [ref=e839]: tiǎo zhàn
+              - paragraph [ref=e840]: challenge
+          - generic [ref=e842]: work
+        - link "百 bǎi hundred numbers ✓ mastered" [ref=e843] [cursor=pointer]:
+          - /url: /vocab/101
+          - generic [ref=e844]:
+            - generic [ref=e845]: 百
+            - generic [ref=e846]:
+              - paragraph [ref=e847]: bǎi
+              - paragraph [ref=e848]: hundred
+          - generic [ref=e849]:
+            - generic [ref=e850]: numbers
+            - generic [ref=e851]: ✓ mastered
+        - link "千 qiān thousand numbers ✓ mastered" [ref=e852] [cursor=pointer]:
+          - /url: /vocab/102
+          - generic [ref=e853]:
+            - generic [ref=e854]: 千
+            - generic [ref=e855]:
+              - paragraph [ref=e856]: qiān
+              - paragraph [ref=e857]: thousand
+          - generic [ref=e858]:
+            - generic [ref=e859]: numbers
+            - generic [ref=e860]: ✓ mastered
+        - link "万 wàn ten thousand numbers" [ref=e861] [cursor=pointer]:
+          - /url: /vocab/103
+          - generic [ref=e862]:
+            - generic [ref=e863]: 万
+            - generic [ref=e864]:
+              - paragraph [ref=e865]: wàn
+              - paragraph [ref=e866]: ten thousand
+          - generic [ref=e868]: numbers
+        - link "亿 yì hundred million numbers" [ref=e869] [cursor=pointer]:
+          - /url: /vocab/104
+          - generic [ref=e870]:
+            - generic [ref=e871]: 亿
+            - generic [ref=e872]:
+              - paragraph [ref=e873]: yì
+              - paragraph [ref=e874]: hundred million
+          - generic [ref=e876]: numbers
+        - link "倍 bèi times (multiplier) numbers" [ref=e877] [cursor=pointer]:
+          - /url: /vocab/105
+          - generic [ref=e878]:
+            - generic [ref=e879]: 倍
+            - generic [ref=e880]:
+              - paragraph [ref=e881]: bèi
+              - paragraph [ref=e882]: times (multiplier)
+          - generic [ref=e884]: numbers
+        - link "比例 bǐ lì ratio / proportion numbers" [ref=e885] [cursor=pointer]:
+          - /url: /vocab/106
+          - generic [ref=e886]:
+            - generic [ref=e887]: 比例
+            - generic [ref=e888]:
+              - paragraph [ref=e889]: bǐ lì
+              - paragraph [ref=e890]: ratio / proportion
+          - generic [ref=e892]: numbers
+        - link "数量 shù liàng quantity / amount numbers" [ref=e893] [cursor=pointer]:
+          - /url: /vocab/107
+          - generic [ref=e894]:
+            - generic [ref=e895]: 数量
+            - generic [ref=e896]:
+              - paragraph [ref=e897]: shù liàng
+              - paragraph [ref=e898]: quantity / amount
+          - generic [ref=e900]: numbers
+        - link "平均 píng jūn average numbers" [ref=e901] [cursor=pointer]:
+          - /url: /vocab/108
+          - generic [ref=e902]:
+            - generic [ref=e903]: 平均
+            - generic [ref=e904]:
+              - paragraph [ref=e905]: píng jūn
+              - paragraph [ref=e906]: average
+          - generic [ref=e908]: numbers
+        - link "大约 dà yuē approximately numbers" [ref=e909] [cursor=pointer]:
+          - /url: /vocab/109
+          - generic [ref=e910]:
+            - generic [ref=e911]: 大约
+            - generic [ref=e912]:
+              - paragraph [ref=e913]: dà yuē
+              - paragraph [ref=e914]: approximately
+          - generic [ref=e916]: numbers
+        - link "至少 zhì shǎo at least numbers" [ref=e917] [cursor=pointer]:
+          - /url: /vocab/110
+          - generic [ref=e918]:
+            - generic [ref=e919]: 至少
+            - generic [ref=e920]:
+              - paragraph [ref=e921]: zhì shǎo
+              - paragraph [ref=e922]: at least
+          - generic [ref=e924]: numbers
+        - link "幽默 yōu mò humor / humorous other" [ref=e925] [cursor=pointer]:
+          - /url: /vocab/111
+          - generic [ref=e926]:
+            - generic [ref=e927]: 幽默
+            - generic [ref=e928]:
+              - paragraph [ref=e929]: yōu mò
+              - paragraph [ref=e930]: humor / humorous
+          - generic [ref=e932]: other
+        - link "缘分 yuán fèn fate / destiny (in relationships) other" [ref=e933] [cursor=pointer]:
+          - /url: /vocab/112
+          - generic [ref=e934]:
+            - generic [ref=e935]: 缘分
+            - generic [ref=e936]:
+              - paragraph [ref=e937]: yuán fèn
+              - paragraph [ref=e938]: fate / destiny (in relationships)
+          - generic [ref=e940]: other
+        - link "面子 miàn zi face (reputation / dignity) other" [ref=e941] [cursor=pointer]:
+          - /url: /vocab/113
+          - generic [ref=e942]:
+            - generic [ref=e943]: 面子
+            - generic [ref=e944]:
+              - paragraph [ref=e945]: miàn zi
+              - paragraph [ref=e946]: face (reputation / dignity)
+          - generic [ref=e948]: other
+        - link "吉利 jí lì auspicious / lucky other" [ref=e949] [cursor=pointer]:
+          - /url: /vocab/114
+          - generic [ref=e950]:
+            - generic [ref=e951]: 吉利
+            - generic [ref=e952]:
+              - paragraph [ref=e953]: jí lì
+              - paragraph [ref=e954]: auspicious / lucky
+          - generic [ref=e956]: other
+        - link "干杯 gān bēi cheers (toast) other" [ref=e957] [cursor=pointer]:
+          - /url: /vocab/115
+          - generic [ref=e958]:
+            - generic [ref=e959]: 干杯
+            - generic [ref=e960]:
+              - paragraph [ref=e961]: gān bēi
+              - paragraph [ref=e962]: cheers (toast)
+          - generic [ref=e964]: other
+        - link "成语 chéng yǔ idiom (four-character) other" [ref=e965] [cursor=pointer]:
+          - /url: /vocab/116
+          - generic [ref=e966]:
+            - generic [ref=e967]: 成语
+            - generic [ref=e968]:
+              - paragraph [ref=e969]: chéng yǔ
+              - paragraph [ref=e970]: idiom (four-character)
+          - generic [ref=e972]: other
+        - link "功夫 gōng fu kung fu / skill / effort other" [ref=e973] [cursor=pointer]:
+          - /url: /vocab/117
+          - generic [ref=e974]:
+            - generic [ref=e975]: 功夫
+            - generic [ref=e976]:
+              - paragraph [ref=e977]: gōng fu
+              - paragraph [ref=e978]: kung fu / skill / effort
+          - generic [ref=e980]: other
+        - link "加油 jiā yóu keep it up! / go for it! other" [ref=e981] [cursor=pointer]:
+          - /url: /vocab/118
+          - generic [ref=e982]:
+            - generic [ref=e983]: 加油
+            - generic [ref=e984]:
+              - paragraph [ref=e985]: jiā yóu
+              - paragraph [ref=e986]: keep it up! / go for it!
+          - generic [ref=e988]: other
+        - link "马马虎虎 mǎ mǎ hū hū so-so / careless other" [ref=e989] [cursor=pointer]:
+          - /url: /vocab/119
+          - generic [ref=e990]:
+            - generic [ref=e991]: 马马虎虎
+            - generic [ref=e992]:
+              - paragraph [ref=e993]: mǎ mǎ hū hū
+              - paragraph [ref=e994]: so-so / careless
+          - generic [ref=e996]: other
+        - link "入乡随俗 rù xiāng suí sú when in Rome, do as the Romans do other" [ref=e997] [cursor=pointer]:
+          - /url: /vocab/120
+          - generic [ref=e998]:
+            - generic [ref=e999]: 入乡随俗
+            - generic [ref=e1000]:
+              - paragraph [ref=e1001]: rù xiāng suí sú
+              - paragraph [ref=e1002]: when in Rome, do as the Romans do
+          - generic [ref=e1004]: other
+  - contentinfo [ref=e1005]:
+    - paragraph [ref=e1006]: Wordkeep — Built for learning Chinese, one word at a time.
+  - button "Open Next.js Dev Tools" [ref=e1012] [cursor=pointer]:
+    - img [ref=e1013]
