@@ -79,16 +79,29 @@ export function VocabProvider({ children }: { children: ReactNode }) {
 
     let cancelled = false;
     async function load() {
-      const { data, error } = await supabase
-        .from("vocab_entries")
-        .select("*")
-        .order("created_at", { ascending: false });
+      // Fetch vocab entries and the user's hidden-entry list in parallel.
+      const [vocabResult, hiddenResult] = await Promise.all([
+        supabase
+          .from("vocab_entries")
+          .select("*")
+          .order("created_at", { ascending: false }),
+        supabase.from("user_hidden_entries").select("entry_id"),
+      ]);
       if (cancelled) return;
-      if (error) {
-        console.error("Failed to load vocab entries:", error);
-      } else {
-        setEntries((data as DbRow[]).map(fromDb));
+      if (vocabResult.error) {
+        console.error("Failed to load vocab entries:", vocabResult.error);
+        setLoading(false);
+        return;
       }
+      const hiddenIds = new Set<string>(
+        (hiddenResult.data ?? []).map(
+          (r: { entry_id: string }) => r.entry_id
+        )
+      );
+      const visible = (vocabResult.data as DbRow[])
+        .filter((r) => !hiddenIds.has(r.id))
+        .map(fromDb);
+      setEntries(visible);
       setLoading(false);
     }
     load();
@@ -134,12 +147,22 @@ export function VocabProvider({ children }: { children: ReactNode }) {
       if (updates.category !== undefined) dbUpdates.category = updates.category;
       if (updates.mastered !== undefined) dbUpdates.mastered = updates.mastered;
 
-      const { error } = await supabase
+      // Use .select() so we can tell whether RLS actually allowed the update.
+      // Seed rows (user_id IS NULL) are read-only to all users — RLS silently
+      // affects 0 rows, so without this check the UI would fake a successful
+      // edit until the next refresh.
+      const { data, error } = await supabase
         .from("vocab_entries")
         .update(dbUpdates)
-        .eq("id", id);
+        .eq("id", id)
+        .select();
       if (error) {
         console.error("Failed to update entry:", error);
+        return;
+      }
+      if (!data || data.length === 0) {
+        // RLS blocked the update — likely a shared seed row.
+        console.warn("Cannot modify seed words (they are shared across users).");
         return;
       }
       setEntries((prev) =>
@@ -151,17 +174,41 @@ export function VocabProvider({ children }: { children: ReactNode }) {
 
   const deleteEntry = useCallback(
     async (id: string) => {
-      const { error } = await supabase
-        .from("vocab_entries")
-        .delete()
-        .eq("id", id);
-      if (error) {
-        console.error("Failed to delete entry:", error);
-        return;
+      if (!user) return;
+      // Figure out whether this is the user's own row or a shared seed row.
+      // Shared seed rows (user_id IS NULL) can't actually be deleted under RLS,
+      // so we record a per-user "hide" in user_hidden_entries instead. From
+      // the user's point of view the word disappears from their lists, but
+      // it remains visible to everyone else.
+      const entry = entries.find((e) => e.id === id);
+      const isSeedRow = !entry?.userId;
+
+      if (isSeedRow) {
+        const { error } = await supabase
+          .from("user_hidden_entries")
+          .insert({ user_id: user.id, entry_id: id });
+        if (error) {
+          console.error("Failed to hide seed entry:", error);
+          return;
+        }
+      } else {
+        const { data, error } = await supabase
+          .from("vocab_entries")
+          .delete()
+          .eq("id", id)
+          .select();
+        if (error) {
+          console.error("Failed to delete entry:", error);
+          return;
+        }
+        if (!data || data.length === 0) {
+          console.warn("Delete blocked by RLS — row was not deleted.");
+          return;
+        }
       }
       setEntries((prev) => prev.filter((e) => e.id !== id));
     },
-    [supabase]
+    [supabase, user, entries]
   );
 
   const toggleMastered = useCallback(
